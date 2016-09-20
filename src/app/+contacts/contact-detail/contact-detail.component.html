@@ -1,0 +1,28 @@
+<div *ngIf="isLoading">
+  <h6 class="messages">{{ loadingMessage }}</h6>
+  <md-progress-bar class="app-progress" mode="indeterminate" 
+    aria-label="Indeterminate progress-bar example"></md-progress-bar>
+</div>
+
+<div *ngIf="!isLoading && contact">
+  <md-card>
+    <md-card-title-group>
+      <i md-card-sm-image class="fa fa-user fa-lg"></i>
+      <md-card-title>
+        {{ contact.name }}
+      </md-card-title>
+      <md-card-subtitle>{{ contact.email }}</md-card-subtitle>
+      <md-card-subtitle>
+        {{ contact.number | phoneNumber : "default" : contact.country }}
+      </md-card-subtitle>
+    </md-card-title-group>
+  </md-card>
+</div>
+
+<div *ngIf="!isLoading && !contact">
+  <h6 class="messages">{{ noContactFoundMessage }}</h6>
+</div>
+
+<a *ngIf="!isLoading" routerLink="/contacts" md-fab class="add-fab back-button">
+  <md-icon>forward</md-icon>
+</a>

@@ -1,0 +1,8 @@
+.messages {
+  text-align: center;
+}
+
+.back-button {
+  margin-top: 10px;
+  transform: rotate(180deg);
+}
