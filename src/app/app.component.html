@@ -1,3 +1,8 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar color="primary">
+  <h4><a class="titleBar" routerLink="/contacts">{{ title }}</a></h4>
+</md-toolbar>
+<div>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>
