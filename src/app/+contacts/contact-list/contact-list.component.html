@@ -1,4 +1,4 @@
-<div *caShowContacts="contacts.length">
+<div *appShowContacts="contacts.length">
   <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
     <thead>
       <tr>
@@ -17,7 +17,7 @@
         <td class="mdl-data-table__cell--non-numeric" (click)="onSelect(contact)">
           {{ contact.number | phoneNumber : "default" : contact.country }}
         </td>
-        <td class="mdl-data-table__cell--non-numeric"><i [caFavoriteIcon]="contact.favorite"></i></td>
+        <td class="mdl-data-table__cell--non-numeric"><i [appFavoriteIcon]="contact.favorite"></i></td>
       </tr>
     </tbody>
   </table>
@@ -25,12 +25,12 @@
   <button (click)="deleteContacts()" md-raised-button color="primary">Delete All Contacts</button>
 </div>
 
-<div *caShowContacts="!contacts.length && !isLoading">
+<div *appShowContacts="!contacts.length && !isLoading">
   <h6 class="messages">{{ noContactsMessage }}</h6>
   <button (click)="addContacts()" md-raised-button color="primary">Add Contacts</button>
 </div>
 
-<div *caShowContacts="!contacts.length && isLoading">
+<div *appShowContacts="!contacts.length && isLoading">
   <h6 class="messages">{{ loadingMessage }}</h6>
   <md-progress-bar class="app-progress" mode="indeterminate" 
     aria-label="Indeterminate progress-bar example"></md-progress-bar>

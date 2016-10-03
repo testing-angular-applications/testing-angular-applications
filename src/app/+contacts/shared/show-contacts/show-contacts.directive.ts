@@ -1,7 +1,7 @@
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: '[caShowContacts]'
+  selector: '[appShowContacts]'
 })
 export class ShowContactsDirective {
   private templateRef: TemplateRef<any>;
@@ -12,7 +12,7 @@ export class ShowContactsDirective {
     this.viewContainer = viewContainer;
   }
 
-  @Input() set caShowContacts(numContacts: number) {
+  @Input() set appShowContacts(numContacts: number) {
     if (numContacts > 0) {
       this.viewContainer.createEmbeddedView(this.templateRef);
     } else {

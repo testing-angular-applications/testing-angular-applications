@@ -7,7 +7,7 @@ import {
 } from '../shared';
 
 @Component({
-  selector: 'ca-contact-list',
+  selector: 'app-contact-list',
   templateUrl: './contact-list.component.html',
   styleUrls: ['./contact-list.component.css']
 })
@@ -15,6 +15,8 @@ export class ContactListComponent implements OnInit {
   public noContactsMessage: string = 'You do not have any contacts yet';
   public loadingMessage: string = 'Loading contacts...';
   public isLoading: boolean = true;
+
+  @Input('contacts') contacts: Contact[];
 
   constructor(private contactService: ContactService, private router: Router) {}
 
@@ -25,8 +27,6 @@ export class ContactListComponent implements OnInit {
   onSelect(contact: Contact) {
     this.router.navigate(['/contact', contact.id]);
   }
-
-  @Input('contacts') contacts: Contact[];
 
   public deleteContacts() {
     this.contacts = [];

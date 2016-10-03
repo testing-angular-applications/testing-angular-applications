@@ -3,16 +3,16 @@ import { Directive, ElementRef, Input, HostListener, OnInit } from '@angular/cor
 import { styles } from '../';
 
 @Directive({
-  selector: '[caFavoriteIcon]'
+  selector: '[appFavoriteIcon]'
 })
 export class FavoriteIconDirective implements OnInit {
   private element: HTMLElement;
 
+  @Input('appFavoriteIcon') isFavorite: boolean;
+
   constructor(element: ElementRef) {
     this.element = element.nativeElement;
   }
-
-  @Input('caFavoriteIcon') isFavorite: boolean;
 
   public ngOnInit() {
     if (this.isFavorite) {

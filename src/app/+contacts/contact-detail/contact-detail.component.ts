@@ -9,7 +9,7 @@ import {
 } from '../shared';
 
 @Component({
-  selector: 'ca-contact-detail',
+  selector: 'app-contact-detail',
   templateUrl: './contact-detail.component.html',
   styleUrls: ['./contact-detail.component.css'],
   viewProviders: [MdIconRegistry]
