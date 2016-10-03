@@ -1,49 +1,71 @@
-import { Directive, ElementRef, Input, HostListener, OnInit } from '@angular/core';
+import { Directive, ElementRef, Input, HostListener, OnInit, Renderer } from '@angular/core';
 
-import { styles } from '../';
+import { starClasses } from '../';
 
 @Directive({
   selector: '[appFavoriteIcon]'
 })
 export class FavoriteIconDirective implements OnInit {
   private element: HTMLElement;
+  private renderer: Renderer;
 
   @Input('appFavoriteIcon') isFavorite: boolean;
 
-  constructor(element: ElementRef) {
+  constructor(element: ElementRef, renderer: Renderer) {
     this.element = element.nativeElement;
+    this.renderer = renderer;
   }
 
-  public ngOnInit() {
+  public ngOnInit(): void {
     if (this.isFavorite) {
-      this.element.setAttribute('class', styles.GOLD_STAR);
+      this.setStarColor('gold');
     } else {
-      this.element.setAttribute('class', styles.WHITE_STAR);
+      this.setStarColor('white');
     }
   }
 
   @HostListener('mouseenter')
-  public onMouseEnter() {
+  public onMouseEnter(): void {
     if (!this.isFavorite) {
-      this.element.setAttribute('class', styles.OUTLINE_STAR);
+      this.setStarColor('outline');
     }
   }
 
   @HostListener('mouseleave')
-  public onMouseLeave() {
+  public onMouseLeave(): void {
     if (!this.isFavorite) {
-      this.element.setAttribute('class', styles.WHITE_STAR);
+      this.setStarColor('white');
     }
   }
 
   @HostListener('click')
-  public onClick() {
+  public onClick(): void {
     this.isFavorite = !this.isFavorite;
 
     if (this.isFavorite) {
-      this.element.setAttribute('class', styles.GOLD_STAR);
+      this.setStarColor('gold');
     } else {
-      this.element.setAttribute('class', styles.OUTLINE_STAR);
+      this.setStarColor('outline');
     }
+  }
+
+  private setStarColor(color: string): void {
+    let classes = '';
+
+    switch (color) {
+      case 'gold':
+        classes = starClasses.GOLD_STAR;
+        break;
+      case 'white':
+        classes = starClasses.WHITE_STAR;
+        break;
+      case 'outline':
+        classes = starClasses.OUTLINE_STAR;
+        break;
+      default:
+        classes = starClasses.OUTLINE_STAR;
+    }
+
+    this.renderer.setElementAttribute(this.element, 'class', classes);
   }
 }

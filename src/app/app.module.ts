@@ -24,7 +24,7 @@ import { PhoneNumberPipe } from './+contacts/shared/phone-number';
 import { ShowContactsDirective } from './+contacts/shared/show-contacts';
 
 import { AppComponent } from './app.component';
-import { routing } from './app.routing';
+import { RoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -47,7 +47,7 @@ import { routing } from './app.routing';
     MdIconModule,
     MdProgressBarModule,
     MdToolbarModule,
-    routing
+    RoutingModule
   ],
   providers: [
     ContactService,
