@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Input, HostListener, OnInit} from '@angular/core';
+import { Directive, ElementRef, Input, HostListener, OnInit } from '@angular/core';
 
 import { styles } from '../';
 
