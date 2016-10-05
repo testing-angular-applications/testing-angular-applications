@@ -28,7 +28,7 @@ import { constants } from './favorite-icon.constants';
  * <element [appFavoriteIcon]="boolean expression" [color]="'color'"></element>
  *
  * Example:
- * <i [appFavoriteIcon]="contact.favorite" [color]="'gold':></i>
+ * <i [appFavoriteIcon]="contact.favorite" [color]="'gold'></i>
  */
 
 @Directive({
