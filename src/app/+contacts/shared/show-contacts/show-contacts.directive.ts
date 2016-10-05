@@ -12,8 +12,8 @@ export class ShowContactsDirective {
     this.viewContainer = viewContainer;
   }
 
-  @Input() set appShowContacts(numContacts: number) {
-    if (numContacts > 0) {
+  @Input() set appShowContacts(shouldShow: boolean) {
+    if (shouldShow) {
       this.viewContainer.createEmbeddedView(this.templateRef);
     } else {
       this.viewContainer.clear();
