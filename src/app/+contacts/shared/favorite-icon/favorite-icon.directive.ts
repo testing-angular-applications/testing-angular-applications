@@ -105,7 +105,7 @@ export class FavoriteIconDirective implements OnInit {
         break;
       default:
         console.warn(constants.warnings.UNRECOGNIZED_COLOR);
-        classes = constants.classes.OUTLINE_STAR;
+        classes = constants.classes.GOLD_STAR;
     }
 
     this.renderer.setElementAttribute(this.element, 'class', classes);
