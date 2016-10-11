@@ -6,11 +6,11 @@ import { constants } from './favorite-icon.constants';
  * FavoriteIconDirective
  * =====================
  * The FavoriteIconDirective takes in a boolean and applies a star depending
- * on whether the boolean is true or false. If the boolean is false, when
- * the element is rolled over a outlined star appears, otherwise a star
- * with the primary color will show up. The default primary color is gold.
- * You can set the primary star color by specifying the second optional
- * color parameter.
+ * to the element depending on whether the boolean is true or false. If the
+ * boolean is false, when the element is rolled over a outlined star appears,
+ * otherwise a star with the primary color will show up. The default primary
+ * color is gold. You can set the primary star color by specifying the second
+ * optional color parameter.
  *
  * Usage:
  * <element [appFavoriteIcon]="boolean expression"></element>
@@ -21,14 +21,13 @@ import { constants } from './favorite-icon.constants';
  *
  * Color (optional)
  * ---------------------------------
- * The second parameter is the color of the star. Currently, the only
- * valid colors are gold, black, and white.
+ * The second parameter is the color of the star.
  *
  * Usage:
  * <element [appFavoriteIcon]="boolean expression" [color]="'color'"></element>
  *
  * Example:
- * <i [appFavoriteIcon]="contact.favorite" [color]="'gold'></i>
+ * <i [appFavoriteIcon]="contact.favorite" [color]="'blue'></i>
  */
 
 @Directive({
