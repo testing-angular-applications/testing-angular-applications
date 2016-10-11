@@ -38,7 +38,7 @@ export class FavoriteIconDirective implements OnInit {
   private element: HTMLElement;
   private renderer: Renderer;
   private _primaryColor: string = 'gold';
-  private _favoriteIconClasses: any = constants.classes;
+  private _starClasses: any = constants.classes;
 
   @Input('appFavoriteIcon') isFavorite: boolean;
 
@@ -56,23 +56,23 @@ export class FavoriteIconDirective implements OnInit {
 
   public ngOnInit(): void {
     if (this.isFavorite) {
-      this.setStarColor(this._primaryColor);
+      this.setSolidColoredStar(this._primaryColor);
     } else {
-      this.setStarColor('white');
+      this.setWhiteSolidStar();
     }
   }
 
   @HostListener('mouseenter')
   public onMouseEnter(): void {
     if (!this.isFavorite) {
-      this.setStarColor('outline');
+      this.setBlackOulineStar();
     }
   }
 
   @HostListener('mouseleave')
   public onMouseLeave(): void {
     if (!this.isFavorite) {
-      this.setStarColor('white');
+      this.setWhiteSolidStar();
     }
   }
 
@@ -81,33 +81,50 @@ export class FavoriteIconDirective implements OnInit {
     this.isFavorite = !this.isFavorite;
 
     if (this.isFavorite) {
-      this.setStarColor(this._primaryColor);
+      this.setSolidColoredStar(this._primaryColor);
     } else {
-      this.setStarColor('outline');
+      this.setBlackOulineStar();
     }
   }
 
-  private setStarColor(color: string): void {
-    let classes = '';
+  private setBlackOulineStar(): void {
+    this.setStarColor('black');
+    this.setStarClass('outline');
+  }
 
-    switch (color) {
-      case 'gold':
-        classes = this._favoriteIconClasses.GOLD_STAR;
-        break;
-      case 'black':
-        classes = this._favoriteIconClasses.BLACK_STAR;
-        break;
-      case 'white':
-        classes = this._favoriteIconClasses.WHITE_STAR;
+  private setSolidColoredStar(color: string): void {
+    this.setStarColor(color);
+    this.setStarClass('solid');
+  }
+
+  private setWhiteSolidStar(): void {
+    this.setStarColor('white');
+    this.setStarClass('solid');
+  }
+
+  private setStarClass(starType: string): void {
+    const className = this.getStarClasses(starType);
+    this.renderer.setElementAttribute(this.element, 'class', className);
+  }
+
+  private setStarColor(color: string): void {
+    this.renderer.setElementStyle(this.element, 'color', color);
+  }
+
+  private getStarClasses(starType): string {
+    let classNames = '';
+
+    switch (starType) {
+      case 'solid':
+        classNames = this._starClasses.SOLID_STAR;
         break;
       case 'outline':
-        classes = this._favoriteIconClasses.OUTLINE_STAR;
+        classNames = this._starClasses.OUTLINE_STAR;
         break;
       default:
-        console.warn(constants.warnings.UNRECOGNIZED_COLOR);
-        classes = constants.classes.GOLD_STAR;
+        classNames = this._starClasses.SOLID_STAR;
     }
 
-    this.renderer.setElementAttribute(this.element, 'class', classes);
+    return classNames;
   }
 }
