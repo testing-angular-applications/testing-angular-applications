@@ -45,7 +45,7 @@ export class FavoriteIconDirective implements OnInit {
   @Input() set color(primaryColorName: string) {
     if (primaryColorName) {
       this._primaryColor = primaryColorName.toLowerCase();
-      this.setSolidColoredStar(this._primaryColor);
+      this.setSolidColoredStar();
     }
   }
 
@@ -56,7 +56,7 @@ export class FavoriteIconDirective implements OnInit {
 
   public ngOnInit(): void {
     if (this.isFavorite) {
-      this.setSolidColoredStar(this._primaryColor);
+      this.setSolidColoredStar();
     } else {
       this.setWhiteSolidStar();
     }
@@ -81,7 +81,7 @@ export class FavoriteIconDirective implements OnInit {
     this.isFavorite = !this.isFavorite;
 
     if (this.isFavorite) {
-      this.setSolidColoredStar(this._primaryColor);
+      this.setSolidColoredStar();
     } else {
       this.setBlackOulineStar();
     }
@@ -92,8 +92,8 @@ export class FavoriteIconDirective implements OnInit {
     this.setStarClass('outline');
   }
 
-  private setSolidColoredStar(color: string): void {
-    this.setStarColor(color);
+  private setSolidColoredStar(): void {
+    this.setStarColor(this._primaryColor);
     this.setStarClass('solid');
   }
 
