@@ -45,7 +45,7 @@ export class FavoriteIconDirective implements OnInit {
   @Input() set color(primaryColorName: string) {
     if (primaryColorName) {
       this._primaryColor = primaryColorName.toLowerCase();
-      this.setStarColor(this._primaryColor);
+      this.setSolidColoredStar(this._primaryColor);
     }
   }
 
