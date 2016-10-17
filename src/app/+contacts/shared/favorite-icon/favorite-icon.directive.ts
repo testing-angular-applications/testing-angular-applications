@@ -13,7 +13,7 @@ import { constants } from './favorite-icon.constants';
  * optional color parameter.
  *
  * Usage:
- * <element [appFavoriteIcon]="boolean expression"></element>
+ * <element [appFavoriteIcon]="expression"></element>
  *
  * Example:
  * <i [appFavoriteIcon]="contact.favorite"></i>
@@ -24,7 +24,7 @@ import { constants } from './favorite-icon.constants';
  * The second parameter is the color of the star.
  *
  * Usage:
- * <element [appFavoriteIcon]="boolean expression" [color]="'color'"></element>
+ * <element [appFavoriteIcon]="expression" [color]="'color'"></element>
  *
  * Example:
  * <i [appFavoriteIcon]="contact.favorite" [color]="'blue'></i>
