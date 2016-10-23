@@ -21,3 +21,8 @@ export function doClassesMatch(resultClasses: DOMTokenList, expectedClasses: str
 
   return doClassesMatch;
 }
+
+export function getElement(fixture: ComponentFixture<ComponentRef<any>>): DebugElement {
+  const el = fixture.nativeElement as DebugElement;
+  return el;
+}
