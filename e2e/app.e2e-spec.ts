@@ -1,10 +1,10 @@
-import { Chapter4StarterPage } from './app.po';
+import { ContactsAppStarterPage } from './app.po';
 
-describe('chapter-4-starter App', function() {
-  let page: Chapter4StarterPage;
+describe('contacts-app-starter App', function() {
+  let page: ContactsAppStarterPage;
 
   beforeEach(() => {
-    page = new Chapter4StarterPage();
+    page = new ContactsAppStarterPage();
   });
 
   it('should display message saying app works', () => {
