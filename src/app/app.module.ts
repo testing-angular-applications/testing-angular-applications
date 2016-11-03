@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MdButtonModule } from '@angular2-material/button';
 import { MdCardModule } from '@angular2-material/card';
 import { MdIconModule, MdIconRegistry } from '@angular2-material/icon';
+import { MdInputModule } from '@angular2-material/input';
 import { MdProgressBarModule } from '@angular2-material/progress-bar';
 import { MdToolbarModule } from '@angular2-material/toolbar';
 

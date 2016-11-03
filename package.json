@@ -24,6 +24,7 @@
     "@angular2-material/card": "^2.0.0-alpha.9",
     "@angular2-material/core": "^2.0.0-alpha.9",
     "@angular2-material/icon": "^2.0.0-alpha.9",
+    "@angular2-material/input": "^2.0.0-alpha.9",
     "@angular2-material/progress-bar": "^2.0.0-alpha.9",
     "@angular2-material/toolbar": "^2.0.0-alpha.9",
     "angular2-in-memory-web-api": "0.0.20",
