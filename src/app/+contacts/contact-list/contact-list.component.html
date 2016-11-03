@@ -11,10 +11,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let contact of contacts">
-        <td class="mdl-data-table__cell--non-numeric" (click)="onSelect(contact)"><i class="fa fa-user fa-lg"></i></td>
-        <td class="mdl-data-table__cell--non-numeric" (click)="onSelect(contact)">{{ contact.name }}</td>
-        <td class="mdl-data-table__cell--non-numeric" (click)="onSelect(contact)">{{ contact.email }}</td>
-        <td class="mdl-data-table__cell--non-numeric" (click)="onSelect(contact)">
+        <td class="mdl-data-table__cell--non-numeric" (click)="onClick(contact)"><i class="fa fa-user fa-lg"></i></td>
+        <td class="mdl-data-table__cell--non-numeric" (click)="onClick(contact)">{{ contact.name }}</td>
+        <td class="mdl-data-table__cell--non-numeric" (click)="onClick(contact)">{{ contact.email }}</td>
+        <td class="mdl-data-table__cell--non-numeric" (click)="onClick(contact)">
           {{ contact.number | phoneNumber : "default" : contact.country }}
         </td>
         <td class="mdl-data-table__cell--non-numeric"><i [appFavoriteIcon]="contact.favorite" [color]="'gold'"></i></td>
