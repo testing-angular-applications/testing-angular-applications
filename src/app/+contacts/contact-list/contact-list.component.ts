@@ -13,8 +13,8 @@ import { constants } from './contact-list.constants';
   styleUrls: ['./contact-list.component.css']
 })
 export class ContactListComponent implements OnInit {
-  public noContactsMessage: string = constants.noContactsMessage;
-  public loadingMessage: string = constants.loadingMessage;
+  public noContactsMessage: string = constants.NO_CONTACTS_MESSAGE;
+  public loadingMessage: string = constants.LOADING_MESSAGE;
   public isLoading: boolean = true;
 
   @Input('contacts') contacts: Contact[];
