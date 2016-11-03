@@ -5,6 +5,7 @@ import {
   Contact,
   ContactService
 } from '../shared';
+import { constants } from './contact-list.constants';
 
 @Component({
   selector: 'app-contact-list',
@@ -12,8 +13,8 @@ import {
   styleUrls: ['./contact-list.component.css']
 })
 export class ContactListComponent implements OnInit {
-  public noContactsMessage: string = 'You do not have any contacts yet';
-  public loadingMessage: string = 'Loading contacts...';
+  public noContactsMessage: string = constants.noContactsMessage;
+  public loadingMessage: string = constants.loadingMessage;
   public isLoading: boolean = true;
 
   @Input('contacts') contacts: Contact[];
