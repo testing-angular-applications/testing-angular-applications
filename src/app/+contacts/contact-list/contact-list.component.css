@@ -16,18 +16,22 @@ tr {
   float: right;
 }
 
-.editIcon {
+.add-fab-icon {
   color: white;
 }
 
-.editIcon:hover {
+.edit-icon {
+  color: white;
+}
+
+.edit-icon:hover {
   color: black;
 }
 
-.deleteIcon {
+.delete-icon {
   color: white;
 }
 
-.deleteIcon:hover {
+.delete-icon:hover {
   color: black;
 }

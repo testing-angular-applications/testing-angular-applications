@@ -3,8 +3,13 @@
 }
 
 .back-button {
+  cursor: pointer;
   margin-top: 10px;
   transform: rotate(180deg);
+}
+
+.back-button-icon {
+  color: white;
 }
 
 .avatar {

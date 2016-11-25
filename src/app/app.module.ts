@@ -3,12 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { MdButtonModule } from '@angular2-material/button';
-import { MdCardModule } from '@angular2-material/card';
-import { MdIconModule, MdIconRegistry } from '@angular2-material/icon';
-import { MdInputModule } from '@angular2-material/input';
-import { MdProgressBarModule } from '@angular2-material/progress-bar';
-import { MdToolbarModule } from '@angular2-material/toolbar';
+import { MaterialModule } from '@angular/material';
 
 import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -45,17 +40,11 @@ import { RoutingModule } from './app-routing.module';
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
-    MdButtonModule,
-    MdCardModule,
-    MdIconModule,
-    MdInputModule,
-    MdProgressBarModule,
-    MdToolbarModule,
+    MaterialModule.forRoot(),
     RoutingModule
   ],
   providers: [
-    ContactService,
-    MdIconRegistry
+    ContactService
   ],
   bootstrap: [AppComponent]
 })

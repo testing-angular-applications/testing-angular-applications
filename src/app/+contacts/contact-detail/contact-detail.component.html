@@ -7,7 +7,7 @@
 <div *ngIf="!isLoading && contact">
   <md-card>
     <md-card-title-group>
-      <i md-card-sm-image class="fa fa-user fa-5x avatar"></i>
+      <md-icon>mood</md-icon>
       <md-card-title>
         {{ contact.name }}
       </md-card-title>
@@ -23,6 +23,6 @@
   <h6 class="messages">{{ noContactFoundMessage }}</h6>
 </div>
 
-<a *ngIf="!isLoading" routerLink="/contacts" md-fab class="add-fab back-button">
-  <md-icon>forward</md-icon>
+<a *ngIf="!isLoading" routerLink="/contacts">
+  <button md-fab class="back-button"><md-icon class="back-button-icon">forward</md-icon></button>
 </a>
