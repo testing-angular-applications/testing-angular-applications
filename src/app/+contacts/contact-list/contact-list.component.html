@@ -8,7 +8,6 @@
         <th class="mdl-data-table__cell--non-numeric">Number</th>
         <th class="mdl-data-table__cell--non-numeric"></th>
         <th class="mdl-data-table__cell--non-numeric"></th>
-        <th class="mdl-data-table__cell--non-numeric"></th>
       </tr>
     </thead>
     <tbody>
@@ -21,7 +20,6 @@
         <td class="mdl-data-table__cell--non-numeric" (click)="onClick(contact)">
           {{ contact.number | phoneNumber : "default" : contact.country }}
         </td>
-        <td><md-icon class="edit-icon"(click)="editContact(contact)">edit</md-icon></td>
         <td><md-icon class="delete-icon" (click)="deleteContact(contact)">delete</md-icon></td>
         <td class="mdl-data-table__cell--non-numeric icon">
           <i [appFavoriteIcon]="contact.favorite" [color]="'gold'" (click)="saveContact(contact)"></i>
@@ -33,9 +31,6 @@
   <button md-raised-button color="primary" (click)="deleteContacts()">
       Delete All Contacts
   </button>
-  <a *ngIf="!isLoading && !deletingContact" routerLink="/add" md-fab class="add-fab">
-    <button md-fab><md-icon class="add-fab-icon">add</md-icon></button>
-  </a>
 </div>
 
 <div *appShowContacts="!contacts.length && !isLoading && !deletingContact && !deletingContacts">
