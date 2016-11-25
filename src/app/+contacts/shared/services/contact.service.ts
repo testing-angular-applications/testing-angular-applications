@@ -7,14 +7,15 @@ import { Contact } from '../';
 
 @Injectable()
 export class ContactService {
-  private contactsUrl = 'app/contacts';
+  private contactsUrl: string = 'app/contacts';
+  private headers: Headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(private http: Http) { }
 
   public getContacts(): Promise<Contact[]> {
     return this.http.get(this.contactsUrl)
                .toPromise()
-               .then(response => response.json().data)
+               .then(response => response.json().data as Contact)
                .catch(this.handleError);
   }
 
@@ -23,42 +24,39 @@ export class ContactService {
                .then(contacts => contacts.find(contact => contact.id === id));
   }
 
-  public save(contact: Contact): Promise<Contact[]> {
+  public save(contact: Contact): Promise<Contact> {
     if (contact.id) {
       return this.put(contact);
     }
 
+    console.table(contact);
+
     return this.post(contact);
   }
 
-  public delete(contact: Contact) {
+  public delete(contact: Contact): Promise<Contact> {
     const url = `${this.contactsUrl}/${contact.id}`;
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json');
 
     return this.http
-             .delete(url, headers)
+             .delete(url, {headers: this.headers})
              .toPromise()
+             .then(() => null)
              .catch(this.handleError);
   }
 
-  private post(contact: Contact): Promise<Contact[]> {
-    const headers = new Headers({'Content-Type': 'application/json'});
-
+  public post(contact: Contact): Promise<Contact> {
     return this.http
-             .post(this.contactsUrl, JSON.stringify(contact), {headers: headers})
+             .post(this.contactsUrl, JSON.stringify(contact), {headers: this.headers})
              .toPromise()
              .then(res => res.json().data)
              .catch(this.handleError);
   }
 
-  private put(contact: Contact): Promise<any> {
+  public put(contact: Contact): Promise<Contact> {
     const url = `${this.contactsUrl}/${contact.id}`;
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json');
 
     return this.http
-             .put(url, JSON.stringify(contact), {headers: headers})
+             .put(url, JSON.stringify(contact), {headers: this.headers})
              .toPromise()
              .then(() => contact)
              .catch(this.handleError);

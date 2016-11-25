@@ -1,4 +1,4 @@
-<div *appShowContacts="contacts.length">
+<div *appShowContacts="contacts.length && !deletingContact && !deletingContacts">
   <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
     <thead>
       <tr>
@@ -6,6 +6,7 @@
         <th class="mdl-data-table__cell--non-numeric">Name</th>
         <th class="mdl-data-table__cell--non-numeric">Email</th>
         <th class="mdl-data-table__cell--non-numeric">Number</th>
+        <th class="mdl-data-table__cell--non-numeric"></th>
         <th class="mdl-data-table__cell--non-numeric"></th>
       </tr>
     </thead>
@@ -17,21 +18,36 @@
         <td class="mdl-data-table__cell--non-numeric" (click)="onClick(contact)">
           {{ contact.number | phoneNumber : "default" : contact.country }}
         </td>
-        <td class="mdl-data-table__cell--non-numeric"><i [appFavoriteIcon]="contact.favorite" [color]="'gold'"></i></td>
+        <td><i class="fa fa-trash-o deleteIcon fa-lg" (click)="deleteContact(contact)"></i></td>
+        <td class="mdl-data-table__cell--non-numeric icon">
+          <i [appFavoriteIcon]="contact.favorite" [color]="'gold'" (click)="saveContact(contact)"></i>
+        </td>
       </tr>
     </tbody>
   </table>
   <br>
-  <button (click)="deleteContacts()" md-raised-button color="primary">Delete All Contacts</button>
+  <button md-raised-button color="primary" (click)="deleteContacts()">Delete All Contacts</button>
 </div>
 
-<div *appShowContacts="!contacts.length && !isLoading">
-  <h6 class="messages">{{ noContactsMessage }}</h6>
-  <button (click)="addContacts()" md-raised-button color="primary">Add Contacts</button>
+<div *appShowContacts="!contacts.length && !isLoading && !deletingContact && !deletingContacts">
+  <h6 class="messages">{{ noContactsFoundMessage }}</h6>
+  <button (click)="refreshContacts()" md-raised-button color="primary">Add Contacts</button>
 </div>
 
-<div *appShowContacts="!contacts.length && isLoading">
-  <h6 class="messages">{{ loadingMessage }}</h6>
+<div *appShowContacts="!contacts.length && isLoading && !deletingContact && !deletingContacts">
+  <h6 class="messages">{{ loadingContactsMessage }}</h6>
   <md-progress-bar class="app-progress" mode="indeterminate" 
     aria-label="Indeterminate progress-bar example"></md-progress-bar>
+</div>
+
+<div *appShowContacts="deletingContact">
+    <h6 class="messages">{{ deletingContactMessage }}</h6>
+    <md-progress-bar class="app-progress" mode="indeterminate"
+                     aria-label="Indeterminate progress-bar example"></md-progress-bar>
+</div>
+
+<div *appShowContacts="deletingContacts">
+    <h6 class="messages">{{ deletingContactsMessage }}</h6>
+    <md-progress-bar class="app-progress" mode="indeterminate"
+                     aria-label="Indeterminate progress-bar example"></md-progress-bar>
 </div>

@@ -102,7 +102,7 @@ export class FavoriteIconDirective implements OnInit {
   }
 
   private setStarClass(starType: string): void {
-    const className = this.getStarClasses(starType);
+    const className: string = this.getStarClasses(starType);
     this.renderer.setElementAttribute(this.element, 'class', className);
   }
 
@@ -111,7 +111,7 @@ export class FavoriteIconDirective implements OnInit {
   }
 
   private getStarClasses(starType): string {
-    let classNames = '';
+    let classNames: string = '';
 
     switch (starType) {
       case 'solid':

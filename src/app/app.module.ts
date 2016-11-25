@@ -22,6 +22,7 @@ import { ContactService } from './+contacts/shared/services';
 import { FavoriteIconDirective } from './+contacts/shared/favorite-icon';
 import { PageNotFoundComponent } from './+page-not-found-component';
 import { PhoneNumberPipe } from './+contacts/shared/phone-number';
+import { NewContactComponent } from './+contacts/new-contact/new-contact.component';
 import { ShowContactsDirective } from './+contacts/shared/show-contacts';
 
 import { AppComponent } from './app.component';
@@ -36,6 +37,7 @@ import { RoutingModule } from './app-routing.module';
     FavoriteIconDirective,
     PageNotFoundComponent,
     PhoneNumberPipe,
+    NewContactComponent,
     ShowContactsDirective
   ],
   imports: [
@@ -46,6 +48,7 @@ import { RoutingModule } from './app-routing.module';
     MdButtonModule,
     MdCardModule,
     MdIconModule,
+    MdInputModule,
     MdProgressBarModule,
     MdToolbarModule,
     RoutingModule

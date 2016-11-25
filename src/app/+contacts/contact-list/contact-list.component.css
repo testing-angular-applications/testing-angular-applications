@@ -15,3 +15,19 @@ tr {
 .add-fab {
   float: right;
 }
+
+.editIcon {
+  color: white;
+}
+
+.editIcon:hover {
+  color: black;
+}
+
+.deleteIcon {
+  color: white;
+}
+
+.deleteIcon:hover {
+  color: black;
+}

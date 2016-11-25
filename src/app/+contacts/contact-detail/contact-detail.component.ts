@@ -7,6 +7,7 @@ import {
   Contact,
   ContactService,
 } from '../shared';
+import { constants } from './contact-detail.constants';
 
 @Component({
   selector: 'app-contact-detail',
@@ -15,10 +16,10 @@ import {
   viewProviders: [MdIconRegistry]
 })
 export class ContactDetailComponent implements OnInit {
+  public loadingContactMessage: string = constants.LOADING_CONTACT_MESSAGE;
+  public noContactFoundMessage: string = constants.NO_CONTACT_FOUND_MESSAGE;
   public isLoading: boolean = true;
   public contact: Contact = null;
-  public loadingMessage: string = 'Loading contact...';
-  public noContactFoundMessage: string = 'Contact not found';
 
   constructor(private contactService: ContactService, private route: ActivatedRoute) {}
 
@@ -26,7 +27,7 @@ export class ContactDetailComponent implements OnInit {
     this.loadContact();
   }
 
-  private loadContact() {
+  private loadContact(): void {
     this.route.params.subscribe(params => {
       const id = +params['id'];
       this.contactService.getContact(id)
