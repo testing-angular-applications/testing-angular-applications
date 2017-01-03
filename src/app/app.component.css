@@ -10,4 +10,5 @@ main {
 a.titleBar {
     color: white;
     text-decoration: none;
+    padding-left: 10px;
 }

@@ -29,8 +29,10 @@ export class ContactService {
       return this.put(contact);
     }
 
-    console.table(contact);
+    return this.post(contact);
+  }
 
+  public new(contact: Contact): Promise<Contact> {
     return this.post(contact);
   }
 
@@ -46,10 +48,10 @@ export class ContactService {
 
   public post(contact: Contact): Promise<Contact> {
     return this.http
-             .post(this.contactsUrl, JSON.stringify(contact), {headers: this.headers})
-             .toPromise()
-             .then(res => res.json().data)
-             .catch(this.handleError);
+        .post(this.contactsUrl, JSON.stringify(contact), {headers: this.headers})
+        .toPromise()
+        .then(res => res.json())
+        .catch(this.handleError);
   }
 
   public put(contact: Contact): Promise<Contact> {

@@ -1,17 +1,30 @@
-<div class="container">
-    <h4>Contact</h4>
-
-    <md-input type="text" id="name" placeholder="name" align="end">
+<div *ngIf="contact && !savingContact">
+  <md-card>
+    <div>
+      <h4>Add New Contact</h4>
+      <md-input type="text" id="name" placeholder="name" align="end" [(ngModel)]="contact.name" required>
         <label>Name</label>
-    </md-input>
-    <br>
-    <md-input type="email" placeholder="email" align="end">
-        <label>Email</label>
-    </md-input>
-    <br>
-    <md-input type="tel" placeholder="phone number" align="end">
-        <label>Phone Number</label>
-    </md-input>
-    <br>
-    <button (click)="createContact()" md-raised-button color="primary">Submit</button>
+      </md-input>
+      <br />
+      <div *ngIf="contact.name">
+        <md-input type="email" placeholder="email" align="end" [(ngModel)]="contact.email">
+          <label>Email</label>
+        </md-input>
+        <br />
+        <md-input type="tel" placeholder="phone number (10 digits)" align="end" [(ngModel)]="contact.number">
+          <label>Phone Number (10 digits)</label>
+        </md-input>
+        <br />
+        <button (click)="addNewContact(contact)" md-raised-button color="primary">Create</button>
+       </div>
+    </div>
+  </md-card>
+  <a *ngIf="!isLoading && !savingContact" routerLink="/contacts">
+    <button md-fab class="back-button"><md-icon class="back-button-icon">forward</md-icon></button>
+  </a>
+</div>
+<div *ngIf="savingContact">
+  <h6 class="messages">Saving Contact...</h6>
+  <md-progress-bar class="app-progress" mode="indeterminate"
+                     aria-label="Indeterminate progress-bar example"></md-progress-bar>
 </div>

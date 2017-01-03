@@ -65,15 +65,30 @@ import { phoneNumberErrorMessages } from './phone-number-error-messages';
  * Example:
  * {{ 7035551234 | phoneNumber : "DOTS" : "US" }}
  * +1 703.555.1234
+ *
+ * Allow Empty String (optional)
+ * ---------------------------------
+ * Using this third parameter you can allow empty strings without throwing an
+ * exception.
+ *
+ * Usage:
+ * {{ <phone number> | phoneNumber : <format-type> : <country-code> : <boolean> }}
+ *
+ * Example:
+ * {{ 7035551234 | phoneNumber : "DOTS" : "US" : true }}
 */
 @Pipe({
   name: 'phoneNumber'
 })
 export class PhoneNumberPipe implements PipeTransform {
 
-  transform(value: string, format?: string, countryCode?: string): string {
+  transform(value: string = '', format?: string, countryCode: string = 'us', allowEmptyString?: boolean): string {
     let phoneNumber: PhoneNumber = null;
     let formattedPhoneNumber = '';
+
+    if (allowEmptyString && value === '') {
+      return '';
+    }
 
     if (this.isPhoneNumberValid(value)) {
       phoneNumber = new PhoneNumber(value);

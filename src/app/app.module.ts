@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { MaterialModule } from '@angular/material';
 
-import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
 import './rxjs-extensions';

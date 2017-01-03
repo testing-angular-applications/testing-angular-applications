@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MdSnackBar, MdSnackBarConfig } from '@angular/material';
 
 import {
   Contact,
@@ -11,22 +12,22 @@ import { CONTACTS } from '../../+contacts/shared/data/mock-contacts';
 @Component({
   selector: 'app-contact-list',
   templateUrl: './contact-list.component.html',
-  styleUrls: ['./contact-list.component.css']
+  styleUrls: ['./contact-list.component.css'],
+  providers: [MdSnackBar]
 })
 export class ContactListComponent implements OnInit {
   public noContactsFoundMessage: string = constants.NO_CONTACTS_FOUND_MESSAGE;
   public loadingContactsMessage: string = constants.LOADING_CONTACTS_MESSAGE;
-  public deletingContactMessage: string = constants.DELETING_CONTACT_MESSAGE;
   public deletingContactsMessage: string = constants.DELETING_CONTACTS_MESSAGE;
   public isLoading: boolean = true;
   public hovering: boolean = false;
-  public deletingContact: boolean = false;
   public deletingContacts: boolean = false;
   public readonly backupContacts: Array<Contact> = CONTACTS.slice();
+  public selectedContact: Contact;
 
   @Input('contacts') contacts: Contact[];
 
-  constructor(private contactService: ContactService, private router: Router) {}
+  constructor(private contactService: ContactService, private router: Router, private snackBar: MdSnackBar) {}
 
   ngOnInit() {
     this.getContacts();
@@ -41,10 +42,20 @@ export class ContactListComponent implements OnInit {
   }
 
   public deleteContact(contact: Contact): void {
-    this.deletingContact = true;
-    this.contactService.delete(contact).then(() => {
-      this.deletingContact = false;
-      this.contacts = this.contacts.filter(c => c !== contact);
+    const message : string = `${contact.name} deleted.`;
+    const snackConfig : MdSnackBarConfig = {duration: 2000};
+    const actionLabel: string = '';
+
+    this.snackBar.open(message, actionLabel, snackConfig);
+
+    this.contactService
+        .delete(contact)
+        .then(() => {
+          this.contacts = this.contacts.filter(c => c !== contact);
+
+          if (this.selectedContact === contact) {
+            this.selectedContact = null;
+          }
     });
   }
 
@@ -84,5 +95,9 @@ export class ContactListComponent implements OnInit {
   public saveContact(contact: Contact) {
     contact.favorite = !contact.favorite;
     this.contactService.save(contact);
+  }
+
+  public onSelect(contact: Contact): void {
+    this.selectedContact = contact;
   }
 }
