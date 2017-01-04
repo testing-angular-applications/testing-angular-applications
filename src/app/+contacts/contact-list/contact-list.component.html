@@ -22,6 +22,9 @@
           {{ contact.number | phoneNumber : "default" : contact.country : true }}
         </td>
         <td>
+          <md-icon class="edit-icon" (click)="editContact(contact)" mdTooltip="Edit">
+            edit
+          </md-icon>
         </td>
         <td>
           <md-icon class="delete-icon" (click)="deleteContact(contact)" mdTooltip="Delete">

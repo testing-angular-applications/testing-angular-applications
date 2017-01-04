@@ -37,16 +37,20 @@ export class ContactListComponent implements OnInit {
     this.router.navigate(['/contact', contact.id]);
   }
 
-  public editContact(): void {
-    console.log('editing contact...');
+  public editContact(contact: Contact): void {
+      this.router.navigate(['/edit', contact.id]);
   }
 
-  public deleteContact(contact: Contact): void {
+  public displayDeleteSnackBar(contact: Contact): void {
     const message : string = `${contact.name} deleted.`;
     const snackConfig : MdSnackBarConfig = {duration: 2000};
     const actionLabel: string = '';
 
     this.snackBar.open(message, actionLabel, snackConfig);
+  }
+
+  public deleteContact(contact: Contact): void {
+    this.displayDeleteSnackBar(contact);
 
     this.contactService
         .delete(contact)

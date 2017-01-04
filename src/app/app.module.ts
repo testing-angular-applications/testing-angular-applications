@@ -13,6 +13,7 @@ import './rxjs-extensions';
 import { ContactsComponent } from './+contacts/contacts.component';
 import { ContactDetailComponent } from './+contacts/contact-detail';
 import { ContactListComponent } from './+contacts/contact-list';
+import { ContactEditComponent } from './+contacts/contact-edit';
 import { ContactService } from './+contacts/shared/services';
 import { FavoriteIconDirective } from './+contacts/shared/favorite-icon';
 import { PageNotFoundComponent } from './+page-not-found-component';
@@ -26,6 +27,7 @@ import { RoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
+    ContactEditComponent,
     ContactDetailComponent,
     ContactListComponent,
     ContactsComponent,
