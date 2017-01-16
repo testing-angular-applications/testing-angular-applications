@@ -1,4 +1,4 @@
-import { InMemoryDbService } from 'angular2-in-memory-web-api';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 import { Contact } from './+contacts/shared/models/';
 import { CONTACTS } from './+contacts/shared/data/mock-contacts';
