@@ -12,7 +12,7 @@ export class ContactService {
 
   constructor(private http: Http) { }
 
-  public getContacts(): Promise<Contact[]> {
+  public getContacts(): any {
     return this.http.get(this.contactsUrl)
                .toPromise()
                .then(response => response.json().data as Contact)
