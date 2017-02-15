@@ -1,3 +1,6 @@
+[![Dependencies Status](https://david-dm.org/testing-angular-applications/contacts-app-starter/status.svg)](https://david-dm.org/testing-angular-applications/contacts-app-starter)
+[![devDependencies Status](https://david-dm.org/testing-angular-applications/contacts-app-starter/dev-status.svg)](https://david-dm.org/testing-angular-applications/contacts-app-starter?type=dev)
+
 # Contacts App Starter
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
