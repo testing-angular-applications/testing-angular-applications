@@ -42,7 +42,7 @@ import { RoutingModule } from './app-routing.module';
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
-    MaterialModule.forRoot(),
+    MaterialModule,
     RoutingModule
   ],
   providers: [

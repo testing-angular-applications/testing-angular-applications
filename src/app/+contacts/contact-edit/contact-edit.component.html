@@ -13,17 +13,17 @@
             [mdTooltip]="contact.favorite ? 'Starred' : 'Not Starred'"
             (click)="saveContact(contact)"></i>
           <md-input-container>
-            <input md-input placeholder="Name" [(ngModel)]="contact.name">
+            <input mdInput placeholder="Name" [(ngModel)]="contact.name" />
           </md-input-container>
         </md-card-title>
         <md-card-subtitle class="left-padding">
           <md-input-container>
-            <input md-input placeholder="Email" [(ngModel)]="contact.email">
+            <input mdInput placeholder="Email" [(ngModel)]="contact.email" />
           </md-input-container>
         </md-card-subtitle>
         <md-card-subtitle class="left-padding">
           <md-input-container>
-            <input md-input placeholder="Phone Number" [(ngModel)]="contact.number">
+            <input mdInput placeholder="Phone Number" [(ngModel)]="contact.number" />
           </md-input-container>
         </md-card-subtitle>
         <md-card-subtitle class="left-padding">
