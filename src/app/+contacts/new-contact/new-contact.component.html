@@ -4,21 +4,24 @@
       <h4>Add New Contact</h4>
       <md-input-container>
         <label>Name</label>
-        <input mdInput type="text" id="name" placeholder="name" align="end" [(ngModel)]="contact.name" required />
+        <input mdInput type="text" id="contact-name"
+            placeholder="name" align="end" [(ngModel)]="contact.name" required />
       </md-input-container>
       <br />
       <div *ngIf="contact.name">
         <md-input-container>
           <label>Email</label>
-          <input mdInput type="email" placeholder="email" align="end" [(ngModel)]="contact.email" />
+          <input mdInput type="email" css="contact-email" id="contact-email"
+              placeholder="email" align="end" [(ngModel)]="contact.email" />
         </md-input-container>
         <br />
         <md-input-container>
           <label>Phone Number (10 digits)</label>
-          <input mdInput type="tel" placeholder="phone number (10 digits)" align="end" [(ngModel)]="contact.number" />
+          <input mdInput id="tel" type="tel" id="contact-tel"
+              placeholder="phone number (10 digits)" align="end" [(ngModel)]="contact.number" />
         </md-input-container>
         <br />
-        <button (click)="addNewContact(contact)" md-raised-button color="primary">Create</button>
+        <button class="create-button" (click)="addNewContact(contact)" md-raised-button color="primary">Create</button>
        </div>
     </div>
   </md-card>

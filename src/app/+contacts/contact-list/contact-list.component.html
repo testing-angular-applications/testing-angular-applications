@@ -43,7 +43,7 @@
   <button md-raised-button color="primary" (click)="deleteContacts()">
       Delete All Contacts
   </button>
-  <a *ngIf="!isLoading && !deletingContact" routerLink="/add" md-fab class="add-fab">
+  <a *ngIf="!isLoading && !deletingContact" id="add-contact" routerLink="/add" md-fab class="add-fab">
     <button md-fab class="add-fab"><md-icon class="add-fab-icon" mdTooltip="Add new contact">add</md-icon></button>
   </a>
 </div>
