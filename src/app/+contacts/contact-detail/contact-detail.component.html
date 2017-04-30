@@ -23,6 +23,14 @@
   <h6 class="messages">{{ noContactFoundMessage }}</h6>
 </div>
 
-<a *ngIf="!isLoading" routerLink="/contacts">
+<div class="buttons" *ngIf="!isLoading">
+<div>
+  <a routerLink="/contacts">
   <button md-fab class="back-button"><md-icon class="back-button-icon" mdTooltip="Add new contact">forward</md-icon></button>
-</a>
+  </a>
+</div>
+
+<div>
+  <button md-fab class="feed-button" color="primary" (click)="openDialog()"><md-icon class="feed-button-icon">chat</md-icon></button>
+</div>
+</div>

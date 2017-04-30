@@ -12,6 +12,24 @@
   color: white;
 }
 
+.feed-button {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.feed-button-icon {
+  color: white;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons div {
+  display: flex;
+}
+
 .avatar {
   margin-top: 15px;
 }

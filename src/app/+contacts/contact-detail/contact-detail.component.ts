@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ContactFeedDialogComponent } from '../contact-feed';
 
 import {
   Contact,
   ContactService,
 } from '../shared';
 import { constants } from './contact-detail.constants';
+import { MdDialog } from '@angular/material';
 
 @Component({
   selector: 'app-contact-detail',
@@ -18,7 +20,7 @@ export class ContactDetailComponent implements OnInit {
   public isLoading: boolean = true;
   public contact: Contact = null;
 
-  constructor(private contactService: ContactService, private route: ActivatedRoute) { }
+  constructor(private contactService: ContactService, private route: ActivatedRoute, private dialog: MdDialog) { }
 
   ngOnInit() {
     this.loadContact();
@@ -32,6 +34,14 @@ export class ContactDetailComponent implements OnInit {
           this.isLoading = false;
           this.contact = contact;
       });
+    });
+  }
+
+  openDialog(): void {
+    console.log('open dialog')
+    let dialogRef = this.dialog.open(ContactFeedDialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+
     });
   }
 }

@@ -12,6 +12,7 @@ import './rxjs-extensions';
 
 import { ContactsComponent } from './+contacts/contacts.component';
 import { ContactDetailComponent } from './+contacts/contact-detail';
+import { ContactFeedDialogComponent } from './+contacts/contact-feed';
 import { ContactListComponent } from './+contacts/contact-list';
 import { ContactEditComponent } from './+contacts/contact-edit';
 import { ContactService } from './+contacts/shared/services';
@@ -29,6 +30,7 @@ import { RoutingModule } from './app-routing.module';
     AppComponent,
     ContactEditComponent,
     ContactDetailComponent,
+    ContactFeedDialogComponent,
     ContactListComponent,
     ContactsComponent,
     FavoriteIconDirective,
@@ -36,6 +38,9 @@ import { RoutingModule } from './app-routing.module';
     PhoneNumberPipe,
     NewContactComponent,
     ShowContactsDirective
+  ],
+  entryComponents: [
+    ContactFeedDialogComponent,
   ],
   imports: [
     BrowserModule,
