@@ -17,6 +17,7 @@ import { ContactDetailComponent } from './+contacts/contact-detail';
 import { ContactFeedDialogComponent } from './+contacts/contact-feed';
 import { ContactListComponent } from './+contacts/contact-list';
 import { ContactEditComponent } from './+contacts/contact-edit';
+import { ContactFeedService } from './+contacts/shared/services';
 import { ContactService } from './+contacts/shared/services';
 import { FavoriteIconDirective } from './+contacts/shared/favorite-icon';
 import { PageNotFoundComponent } from './+page-not-found-component';
@@ -54,7 +55,8 @@ import { RoutingModule } from './app-routing.module';
     RoutingModule
   ],
   providers: [
-    ContactService
+    ContactService,
+    ContactFeedService,
   ],
   bootstrap: [AppComponent]
 })

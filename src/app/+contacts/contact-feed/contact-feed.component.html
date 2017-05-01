@@ -1,10 +1,4 @@
-<div>
-  <md-card>
-    <md-card-title-group>
-      <md-icon>mood</md-icon>
-      <md-card-title>
-        Here's some stuff
-      </md-card-title>
-    </md-card-title-group>
-  </md-card>
-</div>
+Latest posts from {{name}}
+<md-list>
+<md-list-item *ngFor="let update of updates">{{update}}</md-list-item>
+</md-list>

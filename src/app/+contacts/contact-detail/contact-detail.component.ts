@@ -39,7 +39,7 @@ export class ContactDetailComponent implements OnInit {
 
   openDialog(): void {
     console.log('open dialog')
-    let dialogRef = this.dialog.open(ContactFeedDialogComponent);
+    let dialogRef = this.dialog.open(ContactFeedDialogComponent, {data: {name: this.contact.name}});
     dialogRef.afterClosed().subscribe(result => {
 
     });
