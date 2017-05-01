@@ -20,7 +20,7 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "material2-app-theme.scss"
+        "material-app-theme.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
