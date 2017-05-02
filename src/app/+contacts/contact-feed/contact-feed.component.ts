@@ -13,10 +13,10 @@ import { Subscription } from 'rxjs/Subscription';
       state('in', style({transform: 'translateX(0)'})),
       transition('void => *', [
         style({transform: 'translateX(-100%)'}),
-        animate(1000)
+        animate(5000)
       ]),
       transition('* => void', [
-        animate(1000, style({transform: 'translateX(100%)'}))
+        animate(5000, style({transform: 'translateX(100%)'}))
       ])
     ])
   ],
@@ -28,6 +28,7 @@ export class ContactFeedDialogComponent implements OnInit, OnDestroy {
   sub: Subscription;
   updates: string[] = [];
   name: string;
+  closeDisabled = true;
 
   constructor(public dialogRef: MdDialogRef<ContactFeedDialogComponent>, private feed: ContactFeedService, private zone: NgZone,
   @Optional() @Inject(MD_DIALOG_DATA) data: any) {
@@ -44,12 +45,13 @@ export class ContactFeedDialogComponent implements OnInit, OnDestroy {
        }
      });
     */
+    this.closeDisabled = false;
 
     this.zone.runOutsideAngular(() => {
       this.sub = this.feed.getFeed().subscribe((x) => {
         this.zone.run(() => {
           this.updates.push(x);
-          if (this.updates.length > 5) {
+          if (this.updates.length > 4) {
             this.updates.shift();
           }
         });

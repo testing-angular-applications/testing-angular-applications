@@ -1,7 +1,7 @@
 <div *ngIf="isLoading">
   <h6 class="messages">{{ loadingContactMessage }}</h6>
   <md-progress-bar class="app-progress" mode="indeterminate"
-    aria-label="Indeterminate progress-bar example"></md-progress-bar>
+                   aria-label="Indeterminate progress-bar example"></md-progress-bar>
 </div>
 
 <div *ngIf="!isLoading && contact">
@@ -24,13 +24,17 @@
 </div>
 
 <div class="buttons" *ngIf="!isLoading">
-<div>
-  <a routerLink="/contacts">
-  <button md-fab class="back-button"><md-icon class="back-button-icon" mdTooltip="Add new contact">forward</md-icon></button>
-  </a>
-</div>
+  <div>
+    <a routerLink="/contacts">
+      <button md-fab class="back-button">
+        <md-icon class="back-button-icon" mdTooltip="Add new contact">forward</md-icon>
+      </button>
+    </a>
+  </div>
 
-<div>
-  <button md-fab class="feed-button" color="primary" (click)="openDialog()"><md-icon class="feed-button-icon">rss_feed</md-icon></button>
-</div>
+  <div>
+    <button md-fab class="feed-button" color="primary" (click)="openDialog()">
+      <md-icon class="feed-button-icon">rss_feed</md-icon>
+    </button>
+  </div>
 </div>

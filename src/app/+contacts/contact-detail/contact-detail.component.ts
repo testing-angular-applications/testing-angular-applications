@@ -38,10 +38,12 @@ export class ContactDetailComponent implements OnInit {
   }
 
   openDialog(): void {
-    console.log('open dialog')
-    let dialogRef = this.dialog.open(ContactFeedDialogComponent, {data: {name: this.contact.name}});
-    dialogRef.afterClosed().subscribe(result => {
-
-    });
+    // For instructional purposes, insert a slight delay before opening the dialog
+    setTimeout(() => {
+      let dialogRef = this.dialog.open(ContactFeedDialogComponent, {disableClose: true, data: {name: this.contact.name}});
+      dialogRef.afterClosed().subscribe(result => {
+        // TODO do something here if Follow is clicked
+      });
+    }, 500);
   }
 }

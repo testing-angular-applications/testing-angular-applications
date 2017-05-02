@@ -1,4 +1,17 @@
-Latest posts from {{name}}
-<md-list>
-<md-list-item *ngFor="let update of updates">{{update}}</md-list-item>
+<h2 md-dialog-title>Latest posts from {{name}}</h2>
+<md-dialog-content>
+<md-list *ngIf="updates.length > 0">
+    <md-list-item *ngFor="let update of updates">
+      <h4 md-line>{{update}}</h4>
+      <p class="update-time" md-line>at Wed 12:00</p>
+    </md-list-item>
 </md-list>
+
+<md-progress-bar color="secondary" mode="indeterminate" *ngIf="updates.length == 0"></md-progress-bar>
+</md-dialog-content>
+<md-dialog-actions>
+  <div class="buttons">
+      <button md-raised-button md-dialog-close disabled="{{closeDisabled}}">Close</button>
+      <button md-raised-button color="primary" disabled="{{updates.length < 2}}">Follow</button>
+  </div>
+</md-dialog-actions>
