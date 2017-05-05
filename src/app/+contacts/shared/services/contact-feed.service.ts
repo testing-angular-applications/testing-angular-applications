@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { Observable } from 'rxjs/Rx';
 
 const FEED_UPDATES = [
@@ -23,7 +22,7 @@ export class ContactFeedService {
 
   public getFeed() {
     return Observable.interval(500)
-      .map((x) => Math.random() * 5 + 3)
+      .map((x) => Math.random() * 2 + 2)
       .concatMap((x) => Observable.of(x).delay(x * 1000))
       .map((x) => FEED_UPDATES[Math.floor(Math.random() * FEED_UPDATES.length)]);
   }
