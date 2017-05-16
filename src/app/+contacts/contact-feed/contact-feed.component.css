@@ -1,0 +1,13 @@
+.messages {
+  text-align: center;
+}
+
+.update-time {
+  color: grey
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
