@@ -19,9 +19,10 @@ export class ContactListComponent implements OnInit {
   public noContactsFoundMessage: string = constants.NO_CONTACTS_FOUND_MESSAGE;
   public loadingContactsMessage: string = constants.LOADING_CONTACTS_MESSAGE;
   public deletingContactsMessage: string = constants.DELETING_CONTACTS_MESSAGE;
+  public deletingContactMessage: string = constants.DELETING_CONTACT_MESSAGE;
   public isLoading: boolean = true;
-  public hovering: boolean = false;
   public deletingContacts: boolean = false;
+  public deletingContact: boolean = false;
   public readonly backupContacts: Array<Contact> = CONTACTS.slice();
   public selectedContact: Contact;
 
@@ -50,6 +51,7 @@ export class ContactListComponent implements OnInit {
   }
 
   public deleteContact(contact: Contact): void {
+    this.deletingContact = true;
     this.displayDeleteSnackBar(contact);
 
     this.contactService
@@ -60,6 +62,8 @@ export class ContactListComponent implements OnInit {
           if (this.selectedContact === contact) {
             this.selectedContact = null;
           }
+
+          this.deletingContact = false;
     });
   }
 
