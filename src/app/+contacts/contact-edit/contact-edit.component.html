@@ -4,7 +4,7 @@
     aria-label="Indeterminate progress-bar example"></md-progress-bar>
 </div>
 
-<div *ngIf="!isLoading && contact">
+<div *ngIf="!isLoading && contact !== null">
   <md-card>
     <md-card-title-group>
       <md-icon>mood</md-icon>
@@ -42,7 +42,7 @@
   </md-card>
 </div>
 
-<div *ngIf="!isLoading && !contact">
+<div *ngIf="!isLoading && contact === null">
   <h6 class="messages">{{ noContactFoundMessage }}</h6>
 </div>
 
