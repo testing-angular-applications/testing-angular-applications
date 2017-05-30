@@ -51,7 +51,7 @@ export class ContactEditComponent implements OnInit {
   }
 
   public displayEditSnackBar(): void {
-    const message = `Contact updated`;
+    const message = 'Contact updated';
     const snackConfig: MdSnackBarConfig = {duration: 2000};
     const actionLabel = '';
 

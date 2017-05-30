@@ -38,7 +38,8 @@
   "lint": [
     {
       "files": "src/**/*.ts",
-      "project": "src/tsconfig.json"
+      "project": "src/tsconfig.json",
+      "exclude": "src/**/favorite-icon.directive.ts"
     },
     {
       "files": "e2e/**/*.ts",
