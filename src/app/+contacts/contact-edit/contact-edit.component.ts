@@ -31,7 +31,7 @@ export class ContactEditComponent implements OnInit {
   }
 
   private getValues(object: Object): string[] {
-    return Object.keys(object).map((key, value) => { return key });
+    return Object.keys(object).map((key, value) => key);
   }
 
   public saveContact(contact: Contact) {
