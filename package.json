@@ -1,6 +1,6 @@
 {
   "name": "contacts-app-starter",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "engines": {
     "node": "7.x"
   },
