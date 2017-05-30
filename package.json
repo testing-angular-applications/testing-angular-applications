@@ -1,11 +1,10 @@
 {
   "name": "contacts-app-starter",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "license": "MIT",
   "engines": {
     "node": "7.x"
   },
-  "license": "MIT",
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
