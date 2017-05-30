@@ -13,7 +13,7 @@ import { constants } from './new-contact.constants';
 export class NewContactComponent implements OnInit {
   public contact: Contact;
   public id: number;
-  public savingContact: boolean = false;
+  public savingContact = false;
 
   constructor(private contactService: ContactService, private router: Router) { }
 

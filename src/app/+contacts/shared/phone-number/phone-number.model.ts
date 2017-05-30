@@ -38,7 +38,7 @@ export class PhoneNumber {
 
   private getInternationCountryCodeStr(countryCode: string): string {
     countryCode = countryCode.toUpperCase();
-    let countryDialingCode: string = '';
+    let countryDialingCode = '';
 
     if (countryDialingCodes[countryCode]) {
       countryDialingCode = `+${ countryDialingCodes[countryCode] }`;
@@ -50,7 +50,7 @@ export class PhoneNumber {
   }
 
   private getFormattedPhoneNumberStr(format = 'default', countryCode?: string): string {
-    let formattedPhoneNumber: string = '';
+    let formattedPhoneNumber = '';
 
     switch (format.toLowerCase()) {
       case 'default':
@@ -72,7 +72,7 @@ export class PhoneNumber {
 
   public getFormattedPhoneNumber(format = 'default', countryCode?: string): string {
     let formattedPhoneNumber: string = this.getFormattedPhoneNumberStr(format);
-    let internationalCountryCodeStr: string = '';
+    let internationalCountryCodeStr = '';
 
     if (countryCode && format) {
       internationalCountryCodeStr = this.getInternationCountryCodeStr(countryCode);

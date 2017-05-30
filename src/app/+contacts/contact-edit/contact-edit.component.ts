@@ -19,7 +19,7 @@ import { countryDialingCodes } from '../shared/phone-number/country-dialing-code
 export class ContactEditComponent implements OnInit {
   public loadingContactMessage: string = constants.LOADING_CONTACT_MESSAGE;
   public noContactFoundMessage: string = constants.NO_CONTACT_FOUND_MESSAGE;
-  public isLoading: boolean = true;
+  public isLoading = true;
   public contact: Contact = null;
   public countryDialingCodes: Object = this.getValues(countryDialingCodes);
 
@@ -51,9 +51,9 @@ export class ContactEditComponent implements OnInit {
   }
 
   public displayEditSnackBar(): void {
-    const message : string = `Contact updated`;
-    const snackConfig : MdSnackBarConfig = {duration: 2000};
-    const actionLabel: string = '';
+    const message = `Contact updated`;
+    const snackConfig: MdSnackBarConfig = {duration: 2000};
+    const actionLabel = '';
 
     this.snackBar.open(message, actionLabel, snackConfig);
   }

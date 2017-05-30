@@ -36,7 +36,7 @@ import { constants } from './favorite-icon.constants';
 export class FavoriteIconDirective implements OnInit {
   private element: HTMLElement;
   private renderer: Renderer;
-  private _primaryColor: string = 'gold';
+  private _primaryColor = 'gold';
   private _starClasses: any = constants.classes;
 
   @Input('appFavoriteIcon') isFavorite: boolean;
@@ -111,7 +111,7 @@ export class FavoriteIconDirective implements OnInit {
   }
 
   private getStarClasses(starType): string {
-    let classNames: string = '';
+    let classNames = '';
 
     switch (starType) {
       case 'solid':

@@ -7,7 +7,7 @@ import { Contact } from '../';
 
 @Injectable()
 export class ContactService {
-  private contactsUrl: string = 'app/contacts';
+  private contactsUrl = 'app/contacts';
   private headers: Headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(private http: Http) { }

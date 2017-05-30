@@ -7,7 +7,7 @@ export function getStarElement(fixture: ComponentFixture<ComponentRef<any>>, def
 }
 
 export function doClassesMatch(resultClasses: DOMTokenList, expectedClasses: string[]): boolean {
-  let doClassesMatch: boolean = true;
+  let doClassesMatch = true;
   let currentClass: string = null;
 
   for (let i = 0; i < expectedClasses.length; i++) {

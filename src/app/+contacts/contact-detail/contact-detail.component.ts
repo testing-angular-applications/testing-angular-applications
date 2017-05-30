@@ -17,7 +17,7 @@ import { MdDialog } from '@angular/material';
 export class ContactDetailComponent implements OnInit {
   public loadingContactMessage: string = constants.LOADING_CONTACT_MESSAGE;
   public noContactFoundMessage: string = constants.NO_CONTACT_FOUND_MESSAGE;
-  public isLoading: boolean = true;
+  public isLoading = true;
   public contact: Contact = null;
 
   constructor(private contactService: ContactService, private route: ActivatedRoute, private dialog: MdDialog) { }
@@ -40,7 +40,7 @@ export class ContactDetailComponent implements OnInit {
   openDialog(): void {
     // For instructional purposes, insert a slight delay before opening the dialog
     setTimeout(() => {
-      let dialogRef = this.dialog.open(ContactFeedDialogComponent, {disableClose: true, data: {name: this.contact.name}});
+      const dialogRef = this.dialog.open(ContactFeedDialogComponent, {disableClose: true, data: {name: this.contact.name}});
       dialogRef.afterClosed().subscribe(result => {
         // TODO do something here if Follow is clicked
       });

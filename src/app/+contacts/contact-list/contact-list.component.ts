@@ -20,9 +20,9 @@ export class ContactListComponent implements OnInit {
   public loadingContactsMessage: string = constants.LOADING_CONTACTS_MESSAGE;
   public deletingContactsMessage: string = constants.DELETING_CONTACTS_MESSAGE;
   public deletingContactMessage: string = constants.DELETING_CONTACT_MESSAGE;
-  public isLoading: boolean = true;
-  public deletingContacts: boolean = false;
-  public deletingContact: boolean = false;
+  public isLoading = true;
+  public deletingContacts = false;
+  public deletingContact = false;
   public readonly backupContacts: Array<Contact> = CONTACTS.slice();
   public selectedContact: Contact;
 
@@ -43,9 +43,9 @@ export class ContactListComponent implements OnInit {
   }
 
   public displayDeleteSnackBar(contact: Contact): void {
-    const message : string = `${contact.name} deleted.`;
-    const snackConfig : MdSnackBarConfig = {duration: 2000};
-    const actionLabel: string = '';
+    const message = `${contact.name} deleted.`;
+    const snackConfig: MdSnackBarConfig = {duration: 2000};
+    const actionLabel = '';
 
     this.snackBar.open(message, actionLabel, snackConfig);
   }
