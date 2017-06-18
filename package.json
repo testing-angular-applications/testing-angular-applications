@@ -54,8 +54,11 @@
     "typescript": "2.3.4"
   },
   "repository": {
-    "url": "https://github.com/testing-angular-applications/contacts-app-starter",
-    "type": "git"
+    "url": "git+https://github.com/testing-angular-applications/contacts-app-starter.git"
   },
+  "bugs": {
+    "url": "https://github.com/testing-angular-applications/contacts-app-starter/issues"
+  },
+  "homepage": "https://github.com/testing-angular-applications/contacts-app-starter#readme",
   "author": "Jesse Palmer <jesselpalmer@gmail.com>"
 }
