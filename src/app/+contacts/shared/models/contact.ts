@@ -1,12 +1,14 @@
 export default class ContactClass {
-  public id: number;
-  public name: string;
-  public email: string;
-  public number: string;
-  public country: string;
-  public favorite: boolean;
+  private id: number;
+  private name: string;
+  private email: string;
+  private number: string;
+  private country: string;
+  private favorite: boolean;
 
-  constructor() {}
+  constructor(name?: string) {
+    this.name = name;
+  }
 
   getId(): number {
     return this.id;
