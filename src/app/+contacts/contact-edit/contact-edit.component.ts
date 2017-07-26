@@ -70,23 +70,23 @@ export class ContactEditComponent implements OnInit {
         });
   }
 
-  private isEmailValid(): boolean {
+  private isEmailValid(email: string): boolean {
     return this.contact.email === '' ||
         (this.contact.email !== '' && this.contact.email.includes('@') && this.contact.email.includes('.'));
   }
 
-  private isPhoneNumberValid(): boolean {
+  private isPhoneNumberValid(number: string): boolean {
     return this.contact.number === '' ||
         this.contact.number !== '' && this.contact.number.length === 10 && /^\d+$/.test(this.contact.number);
   }
 
   private isFormValid(): boolean {
-    if (!this.isEmailValid()) {
+    if (!this.isEmailValid(this.contact.email)) {
       alert(constants.INVALID_EMAIL_ADDRESS_MESSAGE);
       return false;
     }
 
-    if (!this.isPhoneNumberValid()) {
+    if (!this.isPhoneNumberValid(this.contact.number)) {
       alert(constants.INVALID_PHONE_NUMBER_MESSAGE);
       return false;
     }
