@@ -1,6 +1,3 @@
-/**
- * Created by kzv874 on 9/19/16.
- */
 // Observable class extensions
 import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/throw';

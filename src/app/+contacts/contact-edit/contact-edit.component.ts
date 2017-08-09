@@ -30,7 +30,7 @@ export class ContactEditComponent implements OnInit {
     this.loadContact();
   }
 
-  private getValues(object: Object): string[] {
+  public getValues(object: Object): string[] {
     return Object.keys(object).map((key, value) => key);
   }
 
@@ -39,7 +39,7 @@ export class ContactEditComponent implements OnInit {
     this.contactService.save(contact);
   }
 
-  private loadContact(): void {
+  public loadContact(): void {
     this.route.params.subscribe(params => {
       const id = +params['id'];
       this.contactService.getContact(id)
@@ -70,17 +70,16 @@ export class ContactEditComponent implements OnInit {
         });
   }
 
-  private isEmailValid(email: string): boolean {
-    return this.contact.email === '' ||
-        (this.contact.email !== '' && this.contact.email.includes('@') && this.contact.email.includes('.'));
+  public isEmailValid(email: string): boolean {
+    return email === '' || (email !== '' && email.includes('@') && email.includes('.'));
   }
 
-  private isPhoneNumberValid(number: string): boolean {
+  public isPhoneNumberValid(number: string): boolean {
     return this.contact.number === '' ||
         this.contact.number !== '' && this.contact.number.length === 10 && /^\d+$/.test(this.contact.number);
   }
 
-  private isFormValid(): boolean {
+  public isFormValid(): boolean {
     if (!this.isEmailValid(this.contact.email)) {
       alert(constants.INVALID_EMAIL_ADDRESS_MESSAGE);
       return false;

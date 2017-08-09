@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { MaterialModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
-import { MaterialModule } from '@angular/material';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
 import './rxjs-extensions';
 
-import { ContactsComponent } from './+contacts/contacts.component';
 import { ContactDetailComponent } from './+contacts/contact-detail';
-import { ContactFeedDialogComponent } from './+contacts/contact-feed';
-import { ContactListComponent } from './+contacts/contact-list';
 import { ContactEditComponent } from './+contacts/contact-edit';
+import { ContactListComponent } from './+contacts/contact-list';
+import { ContactsComponent } from './+contacts/contacts.component';
+import { ContactFeedDialogComponent } from './+contacts/contact-feed';
 import { ContactFeedService } from './+contacts/shared/services';
 import { ContactService } from './+contacts/shared/services';
 import { FavoriteIconDirective } from './+contacts/shared/favorite-icon';
