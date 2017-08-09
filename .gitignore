@@ -41,6 +41,9 @@ testem.log
 # unit tests
 *.spec.ts
 
-#System Files
+# System Files
 .DS_Store
 Thumbs.db
+
+# Yarn
+yarn-error.log
