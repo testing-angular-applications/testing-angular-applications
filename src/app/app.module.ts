@@ -10,18 +10,18 @@ import { InMemoryDataService } from './in-memory-data.service';
 
 import './rxjs-extensions';
 
-import { ContactDetailComponent } from './+contacts/contact-detail';
-import { ContactEditComponent } from './+contacts/contact-edit';
-import { ContactListComponent } from './+contacts/contact-list';
-import { ContactsComponent } from './+contacts/contacts.component';
-import { ContactFeedDialogComponent } from './+contacts/contact-feed';
-import { ContactFeedService } from './+contacts/shared/services';
-import { ContactService } from './+contacts/shared/services';
-import { FavoriteIconDirective } from './+contacts/shared/favorite-icon';
-import { PageNotFoundComponent } from './+page-not-found-component';
-import { PhoneNumberPipe } from './+contacts/shared/phone-number';
-import { NewContactComponent } from './+contacts/new-contact/new-contact.component';
-import { ShowContactsDirective } from './+contacts/shared/show-contacts';
+import { ContactDetailComponent } from './contacts/contact-detail';
+import { ContactEditComponent } from './contacts/contact-edit';
+import { ContactListComponent } from './contacts/contact-list';
+import { ContactsComponent } from './contacts/contacts.component';
+import { ContactFeedDialogComponent } from './contacts/contact-feed';
+import { ContactFeedService } from './contacts/shared/services';
+import { ContactService } from './contacts/shared/services';
+import { FavoriteIconDirective } from './contacts/shared/favorite-icon';
+import { PageNotFoundComponent } from './page-not-found-component';
+import { PhoneNumberPipe } from './contacts/shared/phone-number';
+import { NewContactComponent } from './contacts/new-contact/new-contact.component';
+import { ShowContactsDirective } from './contacts/shared/show-contacts';
 
 import { AppComponent } from './app.component';
 import { RoutingModule } from './app-routing.module';

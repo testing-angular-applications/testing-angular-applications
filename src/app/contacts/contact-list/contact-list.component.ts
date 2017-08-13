@@ -7,7 +7,7 @@ import {
   ContactService
 } from '../shared';
 import { constants } from './contact-list.constants';
-import { CONTACTS } from '../../+contacts/shared/data/mock-contacts';
+import { CONTACTS } from '..//shared/data/mock-contacts';
 
 @Component({
   selector: 'app-contact-list',
