@@ -129,6 +129,10 @@
   dependencies:
     tslib "^1.7.1"
 
+"@angular/language-service@4.2.4":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-4.2.4.tgz#5c044987e5d532118181632c56b802bf9f21bf9a"
+
 "@angular/material@2.0.0-beta.8":
   version "2.0.0-beta.8"
   resolved "https://registry.yarnpkg.com/@angular/material/-/material-2.0.0-beta.8.tgz#a92852abc9261aea26c2401f576645470be2cf38"
@@ -183,9 +187,15 @@
   version "2.0.34"
   resolved "https://registry.yarnpkg.com/@types/hammerjs/-/hammerjs-2.0.34.tgz#9cbac4f41cb039436141785e1be50b3ab10a04a9"
 
-"@types/jasmine@2.5.53":
+"@types/jasmine@*", "@types/jasmine@2.5.53":
   version "2.5.53"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.5.53.tgz#4e0cefad09df5ec48c8dd40433512f84b1568d61"
+
+"@types/jasminewd2@2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@types/jasminewd2/-/jasminewd2-2.0.2.tgz#5f68e1e697bf10bc6fd8cbf2e006a3d6712c5b64"
+  dependencies:
+    "@types/jasmine" "*"
 
 "@types/node@8.0.20":
   version "8.0.20"
