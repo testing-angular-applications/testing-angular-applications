@@ -7,19 +7,19 @@ export function getStarElement(fixture: ComponentFixture<ComponentRef<any>>, def
 }
 
 export function doClassesMatch(resultClasses: DOMTokenList, expectedClasses: string[]): boolean {
-  let doClassesMatch = true;
+  let classesMatch = true;
   let currentClass: string = null;
 
   for (let i = 0; i < expectedClasses.length; i++) {
     currentClass = expectedClasses[i];
-    doClassesMatch = resultClasses.contains(currentClass);
+    classesMatch = resultClasses.contains(currentClass);
 
-    if (!doClassesMatch) {
+    if (!classesMatch) {
       break;
     }
   }
 
-  return doClassesMatch;
+  return classesMatch;
 }
 
 export function getElement(fixture: ComponentFixture<ComponentRef<any>>): DebugElement {
