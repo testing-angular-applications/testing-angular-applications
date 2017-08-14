@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { MdDialog } from '@angular/material';
 import { Router } from '@angular/router';
 
 import { ContactService } from '../shared/services/contact.service';
 import { Contact } from '../shared/models/contact.model';
-import { constants } from './new-contact.constants';
+import { InvalidEmailModalComponent } from '../../shared/modals/invalid-email-modal/invalid-email-modal.component';
+import { InvalidPhoneNumberModalComponent } from '../../shared/modals/invalid-phone-number-modal/invalid-phone-number-modal.component';
 
 @Component({
   selector: 'app-new-contact',
@@ -15,11 +17,11 @@ export class NewContactComponent implements OnInit {
   public id: number;
   public savingContact = false;
 
-  constructor(private contactService: ContactService, private router: Router) { }
+  constructor(private contactService: ContactService, private router: Router, private dialog: MdDialog) { }
 
   ngOnInit() {
     this.contactService.getContacts()
-        .then(contacts => { this.createNewContact(contacts.length) });
+        .then(contacts => { this.createNewContact(contacts.length); });
   }
 
   createNewContact(numContacts: number) {
@@ -60,12 +62,12 @@ export class NewContactComponent implements OnInit {
 
   private isFormValid(): boolean {
     if (!this.isEmailValid()) {
-      alert(constants.INVALID_EMAIL_ADDRESS_MESSAGE);
+      this.dialog.open(InvalidEmailModalComponent);
       return false;
     }
 
     if (!this.isPhoneNumberValid()) {
-      alert(constants.INVALID_PHONE_NUMBER_MESSAGE);
+      this.dialog.open(InvalidPhoneNumberModalComponent);
       return false;
     }
 

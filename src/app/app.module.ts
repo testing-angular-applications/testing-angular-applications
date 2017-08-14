@@ -25,6 +25,8 @@ import { ShowContactsDirective } from './contacts/shared/show-contacts';
 
 import { AppComponent } from './app.component';
 import { RoutingModule } from './app-routing.module';
+import { InvalidEmailModalComponent } from './shared/modals/invalid-email-modal/invalid-email-modal.component';
+import { InvalidPhoneNumberModalComponent } from './shared/modals/invalid-phone-number-modal/invalid-phone-number-modal.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { RoutingModule } from './app-routing.module';
     ContactListComponent,
     ContactsComponent,
     FavoriteIconDirective,
+    InvalidEmailModalComponent,
+    InvalidPhoneNumberModalComponent,
     PageNotFoundComponent,
     PhoneNumberPipe,
     NewContactComponent,
@@ -42,6 +46,8 @@ import { RoutingModule } from './app-routing.module';
   ],
   entryComponents: [
     ContactFeedDialogComponent,
+    InvalidEmailModalComponent,
+    InvalidPhoneNumberModalComponent
   ],
   imports: [
     BrowserModule,

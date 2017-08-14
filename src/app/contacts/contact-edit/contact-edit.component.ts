@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { MdDialog, MdSnackBar, MdSnackBarConfig } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
-import { MdSnackBar, MdSnackBarConfig } from '@angular/material';
 
 import {
   Contact,
   ContactService,
 } from '../shared';
 import { constants } from './contact-edit.constants';
+import { InvalidEmailModalComponent } from '../../shared/modals/invalid-email-modal/invalid-email-modal.component';
+import { InvalidPhoneNumberModalComponent } from '../../shared/modals/invalid-phone-number-modal/invalid-phone-number-modal.component';
 import { countryDialingCodes } from '../shared/phone-number/country-dialing-codes';
 
 @Component({
@@ -24,7 +26,7 @@ export class ContactEditComponent implements OnInit {
   public countryDialingCodes: Object = this.getValues(countryDialingCodes);
 
   constructor(private contactService: ContactService, private route: ActivatedRoute, private router: Router,
-              private snackBar: MdSnackBar) { }
+              private snackBar: MdSnackBar, private dialog: MdDialog) { }
 
   ngOnInit() {
     this.loadContact();
@@ -75,18 +77,17 @@ export class ContactEditComponent implements OnInit {
   }
 
   public isPhoneNumberValid(number: string): boolean {
-    return this.contact.number === '' ||
-        this.contact.number !== '' && this.contact.number.length === 10 && /^\d+$/.test(this.contact.number);
+    return number === '' || number !== '' && number.length === 10 && /^\d+$/.test(number);
   }
 
-  public isFormValid(): boolean {
+  private isFormValid(): boolean {
     if (!this.isEmailValid(this.contact.email)) {
-      alert(constants.INVALID_EMAIL_ADDRESS_MESSAGE);
+      this.dialog.open(InvalidEmailModalComponent);
       return false;
     }
 
-    if (!this.isPhoneNumberValid(this.contact.number)) {
-      alert(constants.INVALID_PHONE_NUMBER_MESSAGE);
+    if (!this.isPhoneNumberValid(this.contact.email)) {
+      this.dialog.open(InvalidPhoneNumberModalComponent);
       return false;
     }
 
