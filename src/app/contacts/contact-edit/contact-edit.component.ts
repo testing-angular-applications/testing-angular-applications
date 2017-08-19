@@ -77,7 +77,7 @@ export class ContactEditComponent implements OnInit {
   }
 
   public isPhoneNumberValid(number: string): boolean {
-    return number === '' || number !== '' && number.length === 10 && /^\d+$/.test(number);
+    return number === '' || (number !== '' && number.length === 10 && /^\d+$/.test(number));
   }
 
   private isFormValid(): boolean {
@@ -86,7 +86,7 @@ export class ContactEditComponent implements OnInit {
       return false;
     }
 
-    if (!this.isPhoneNumberValid(this.contact.email)) {
+    if (!this.isPhoneNumberValid(this.contact.number)) {
       this.dialog.open(InvalidPhoneNumberModalComponent);
       return false;
     }
