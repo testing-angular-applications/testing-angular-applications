@@ -1,6 +1,6 @@
 {
   "name": "contacts-app-starter",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "engines": {
     "node": "6.9.x"
