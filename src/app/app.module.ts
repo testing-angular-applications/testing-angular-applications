@@ -27,7 +27,6 @@ import { AppComponent } from './app.component';
 import { RoutingModule } from './app-routing.module';
 import { InvalidEmailModalComponent } from './contacts/shared';
 import { InvalidPhoneNumberModalComponent } from './contacts/shared';
-import { TestComponentComponent } from './test-component/test-component.component';
 
 @NgModule({
   declarations: [
@@ -43,8 +42,7 @@ import { TestComponentComponent } from './test-component/test-component.componen
     PageNotFoundComponent,
     PhoneNumberPipe,
     NewContactComponent,
-    ShowContactsDirective,
-    TestComponentComponent
+    ShowContactsDirective
   ],
   entryComponents: [
     ContactFeedDialogComponent,
