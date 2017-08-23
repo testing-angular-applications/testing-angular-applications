@@ -2,5 +2,8 @@ export * from './data/mock-contacts';
 export * from './favorite-icon/favorite-icon.directive';
 export * from './models/contact.model';
 export * from './phone-number/phone-number.pipe';
+export * from './phone-number/country-dialing-codes';
 export * from './services/contact.service';
 export * from './show-contacts/show-contacts.directive';
+export * from './modals/invalid-email-modal/invalid-email-modal.component';
+export * from './modals/invalid-phone-number-modal/invalid-phone-number-modal.component';

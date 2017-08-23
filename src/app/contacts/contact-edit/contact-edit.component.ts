@@ -8,9 +8,9 @@ import {
   ContactService,
 } from '../shared';
 import { constants } from './contact-edit.constants';
-import { InvalidEmailModalComponent } from '../../shared/modals/invalid-email-modal/invalid-email-modal.component';
-import { InvalidPhoneNumberModalComponent } from '../../shared/modals/invalid-phone-number-modal/invalid-phone-number-modal.component';
-import { countryDialingCodes } from '../shared/phone-number/country-dialing-codes';
+import { InvalidEmailModalComponent } from '../shared';
+import { InvalidPhoneNumberModalComponent } from '../shared';
+import { countryDialingCodes } from '../shared';
 
 @Component({
   selector: 'app-contact-detail',
@@ -61,7 +61,7 @@ export class ContactEditComponent implements OnInit {
   }
 
   public updateContact(contact: Contact): void {
-    if (!this.isFormValid()) {
+    if (!this.isContactValid(contact)) {
       return;
     }
 
@@ -76,17 +76,17 @@ export class ContactEditComponent implements OnInit {
     return email === '' || (email !== '' && email.includes('@') && email.includes('.'));
   }
 
-  public isPhoneNumberValid(number: string): boolean {
-    return number === '' || (number !== '' && number.length === 10 && /^\d+$/.test(number));
+  public isPhoneNumberValid(phoneNumber: string): boolean {
+    return phoneNumber === '' || (phoneNumber !== '' && phoneNumber.length === 10 && /^\d+$/.test(phoneNumber));
   }
 
-  private isFormValid(): boolean {
-    if (!this.isEmailValid(this.contact.email)) {
+  public isContactValid(contact: Contact): boolean {
+    if (!this.isEmailValid(contact.email)) {
       this.dialog.open(InvalidEmailModalComponent);
       return false;
     }
 
-    if (!this.isPhoneNumberValid(this.contact.number)) {
+    if (!this.isPhoneNumberValid(contact.number)) {
       this.dialog.open(InvalidPhoneNumberModalComponent);
       return false;
     }

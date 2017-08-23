@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 
 import { ContactService } from '../shared/services/contact.service';
 import { Contact } from '../shared/models/contact.model';
-import { InvalidEmailModalComponent } from '../../shared/modals/invalid-email-modal/invalid-email-modal.component';
-import { InvalidPhoneNumberModalComponent } from '../../shared/modals/invalid-phone-number-modal/invalid-phone-number-modal.component';
+import { InvalidEmailModalComponent } from '../shared';
+import { InvalidPhoneNumberModalComponent } from '../shared';
 
 @Component({
   selector: 'app-new-contact',
