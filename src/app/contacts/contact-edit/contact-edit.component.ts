@@ -23,7 +23,7 @@ export class ContactEditComponent implements OnInit {
   public noContactFoundMessage: string = constants.NO_CONTACT_FOUND_MESSAGE;
   public isLoading = true;
   public contact: Contact = null;
-  public countryDialingCodes: Object = this.getValues(countryDialingCodes);
+  public countryDialingCodes: string[] = this.getKeys(countryDialingCodes);
 
   constructor(private contactService: ContactService, private route: ActivatedRoute, private router: Router,
               private snackBar: MdSnackBar, private dialog: MdDialog) { }
@@ -32,7 +32,7 @@ export class ContactEditComponent implements OnInit {
     this.loadContact();
   }
 
-  public getValues(object: Object): string[] {
+  public getKeys(object: Object): string[] {
     return Object.keys(object).map((key, value) => key);
   }
 
