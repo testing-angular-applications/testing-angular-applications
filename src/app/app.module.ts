@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -10,6 +9,7 @@ import { InMemoryDataService } from './in-memory-data.service';
 
 import './rxjs-extensions';
 
+import { AppMaterialModule } from './app.material.module';
 import { ContactDetailComponent } from './contacts/contact-detail';
 import { ContactEditComponent } from './contacts/contact-edit';
 import { ContactListComponent } from './contacts/contact-list';
@@ -50,12 +50,12 @@ import { InvalidPhoneNumberModalComponent } from './contacts/shared';
     InvalidPhoneNumberModalComponent
   ],
   imports: [
+    AppMaterialModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
-    MaterialModule,
     RoutingModule
   ],
   providers: [
