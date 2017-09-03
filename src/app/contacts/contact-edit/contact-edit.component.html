@@ -1,51 +1,53 @@
-<div *ngIf="isLoading">
-  <h6 class="messages">{{ loadingContactMessage }}</h6>
-  <md-progress-bar class="app-progress" mode="indeterminate" 
-    aria-label="Indeterminate progress-bar example"></md-progress-bar>
-</div>
+<div>
+  <div *ngIf="isLoading">
+    <h6 class="messages">{{ loadingContactMessage }}</h6>
+    <md-progress-bar class="app-progress" mode="indeterminate"
+      aria-label="Indeterminate progress-bar example"></md-progress-bar>
+  </div>
 
-<div *ngIf="!isLoading && contact !== null">
-  <md-card>
-    <md-card-title-group>
-      <md-icon>mood</md-icon>
-        <md-card-title>
-          <i [appFavoriteIcon]="contact.favorite" [color]="'gold'"
-            [mdTooltip]="contact.favorite ? 'Starred' : 'Not Starred'"
-            (click)="saveContact(contact)"></i>
-          <md-input-container>
-            <input mdInput placeholder="Name" [(ngModel)]="contact.name" />
-          </md-input-container>
-        </md-card-title>
-        <md-card-subtitle class="left-padding">
-          <md-input-container>
-            <input mdInput placeholder="Email" [(ngModel)]="contact.email" />
-          </md-input-container>
-        </md-card-subtitle>
-        <md-card-subtitle class="left-padding">
-          <md-input-container>
-            <input mdInput placeholder="Phone Number" [(ngModel)]="contact.number" />
-          </md-input-container>
-        </md-card-subtitle>
-        <md-card-subtitle class="left-padding">
-          <md-select placeholder="Country code" [(ngModel)]="contact.country">
-            <md-option *ngFor="let countryDialingCode of countryDialingCodes" [value]="countryDialingCode">
-              {{ countryDialingCode }}
-            </md-option>
-          </md-select>
-        </md-card-subtitle>
-    </md-card-title-group>
-    <div class="update-contact-button">
-      <button (click)="updateContact(contact)" md-raised-button color="primary">
-        Update Contact
-      </button>
-    </div>
-  </md-card>
-</div>
+  <div *ngIf="!isLoading && contact !== null">
+    <md-card>
+      <md-card-title-group>
+        <md-icon>mood</md-icon>
+          <md-card-title>
+            <i [appFavoriteIcon]="contact.favorite" [color]="'gold'"
+              [mdTooltip]="contact.favorite ? 'Starred' : 'Not Starred'"
+              (click)="saveContact(contact)"></i>
+            <md-input-container>
+              <input mdInput placeholder="Name" [(ngModel)]="contact.name" />
+            </md-input-container>
+          </md-card-title>
+          <md-card-subtitle class="left-padding">
+            <md-input-container>
+              <input mdInput placeholder="Email" [(ngModel)]="contact.email" />
+            </md-input-container>
+          </md-card-subtitle>
+          <md-card-subtitle class="left-padding">
+            <md-input-container>
+              <input mdInput placeholder="Phone Number" [(ngModel)]="contact.number" />
+            </md-input-container>
+          </md-card-subtitle>
+          <md-card-subtitle class="left-padding">
+            <md-select placeholder="Country code" [(ngModel)]="contact.country">
+              <md-option *ngFor="let countryDialingCode of countryDialingCodes" [value]="countryDialingCode">
+                {{ countryDialingCode }}
+              </md-option>
+            </md-select>
+          </md-card-subtitle>
+      </md-card-title-group>
+      <div class="update-contact-button">
+        <button (click)="updateContact(contact)" md-raised-button color="primary">
+          Update Contact
+        </button>
+      </div>
+    </md-card>
+  </div>
 
-<div *ngIf="!isLoading && contact === null">
-  <h6 class="messages">{{ noContactFoundMessage }}</h6>
-</div>
+  <div *ngIf="!isLoading && contact === null">
+    <h6 class="messages">{{ noContactFoundMessage }}</h6>
+  </div>
 
-<a *ngIf="!isLoading" routerLink="/contacts">
-  <button md-fab class="back-button"><md-icon class="back-button-icon" mdTooltip="Add new contact">forward</md-icon></button>
-</a>
+  <a *ngIf="!isLoading" routerLink="/contacts">
+    <button md-fab class="back-button"><md-icon class="back-button-icon" mdTooltip="Add new contact">forward</md-icon></button>
+  </a>
+</div>
