@@ -3,7 +3,7 @@
   "version": "0.1.11",
   "license": "MIT",
   "engines": {
-    "node": "6.9.x"
+    "node": "8.x"
   },
   "angular-cli": {},
   "scripts": {
@@ -27,7 +27,7 @@
     "@angular/platform-browser-dynamic": "4.4.0-RC.0",
     "@angular/platform-server": "4.4.0-RC.0",
     "@angular/router": "4.4.0-RC.0",
-    "angular-in-memory-web-api": "0.3.2",
+    "angular-in-memory-web-api": "0.4.1",
     "core-js": "2.5.1",
     "hammerjs": "2.0.8",
     "rxjs": "5.4.3",
@@ -36,13 +36,13 @@
   },
   "devDependencies": {
     "@angular/cdk": "2.0.0-beta.10",
-    "@angular/cli": "1.3.2",
+    "@angular/cli": "1.4.1",
     "@angular/compiler-cli": "4.4.0-RC.0",
     "@angular/language-service": "4.4.0-RC.0",
     "@types/hammerjs": "2.0.35",
     "@types/jasmine": "2.5.54",
     "@types/jasminewd2": "2.0.3",
-    "@types/node": "8.0.26",
+    "@types/node": "8.0.28",
     "codelyzer": "3.1.2",
     "jasmine-core": "2.8.0",
     "jasmine-spec-reporter": "4.2.1",
