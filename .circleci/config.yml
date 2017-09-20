@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/workspace
+    docker:
+      - image: circleci/node:7-browsers
+    steps:
+      - checkout
+      
+      - run: export IS_CIRCLE=true
+      - run: node --version
+      - run: npm --version
+      - run: yarn --version
+      - run: google-chrome --version
+      
+      - run: yarn install
+      - run: yarn run ng e2e protractor.conf.js
