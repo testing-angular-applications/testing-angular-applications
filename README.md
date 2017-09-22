@@ -2,6 +2,7 @@
 [![Code Climate](https://codeclimate.com/github/testing-angular-applications/contacts-app-starter/badges/gpa.svg)](https://codeclimate.com/github/testing-angular-applications/contacts-app-starter)
 [![Dependencies Status](https://david-dm.org/testing-angular-applications/contacts-app-starter/status.svg)](https://david-dm.org/testing-angular-applications/contacts-app-starter)
 [![devDependencies Status](https://david-dm.org/testing-angular-applications/contacts-app-starter/dev-status.svg)](https://david-dm.org/testing-angular-applications/contacts-app-starter?type=dev)
+[![CircleCI Status](https://circleci.com/gh/testing-angular-applications/contacts-app-starter.svg?style=svg)](https://circleci.com/gh/testing-angular-applications/contacts-app-starter)
 
 # Contacts App Starter
 

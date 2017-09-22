@@ -30,6 +30,7 @@
 /coverage
 /libpeerconnection.log
 npm-debug.log
+/output/
 testem.log
 /typings
 yarn-error.log
@@ -44,7 +45,6 @@ yarn-error.log
 # e2e
 /e2e/*.js
 /e2e/*.map
-/e2e/*-spec.ts
 
 # unit tests
 *.spec.ts
