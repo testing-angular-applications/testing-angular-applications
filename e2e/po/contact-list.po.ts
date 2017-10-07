@@ -1,7 +1,6 @@
 import { by, ProtractorBrowser, ElementArrayFinder } from 'protractor';
 import { promise as wdpromise } from 'selenium-webdriver';
 import { PageObject } from './base.po';
-import { NewContactPageObject } from './new-contact.po';
 
 export enum COL {
   name = 1,
@@ -9,8 +8,10 @@ export enum COL {
   phoneNumber = 3
 }
 
-export class Contact {
-  constructor(public name?: string, public email?: string, public tel?: string) {}
+export interface Contact {
+  name?: string;
+  email?: string;
+  tel?: string;
 }
 
 export class ContactListPageObject extends PageObject {
@@ -28,9 +29,23 @@ export class ContactListPageObject extends PageObject {
     this.browser.get('/');
   }
 
+  verifyUrl() {
+    expect(this.browser.getCurrentUrl()).toEqual(this.browser.baseUrl + '/');
+  }
+
+  clickContactNumber(contactNumber: number) {
+    return this.trs.count().then(count => {
+      const contactIndexNumber = contactNumber - 1;
+      if (contactIndexNumber < count) {
+        return this.trs.get(contactIndexNumber).click();
+      } else {
+        throw new Error('contact number out of range');
+      }
+    });
+  }
+
   clickPlusButton() {
-    this.element(by.id('add-contact')).click();
-    return new NewContactPageObject();
+    return this.element(by.id('add-contact')).click();
   }
 
   /**
@@ -49,9 +64,9 @@ export class ContactListPageObject extends PageObject {
   /**
    * Returns a promise of a contact array.
    */
-  getContacts() {
+  getContacts(): wdpromise.Promise<Contact[]> {
     return this.trs.map(elem => {
-      let contact: Contact = new Contact();
+      let contact: Contact = {};
       let tds = elem.all(by.tagName('td'));
       // We need to get the values of the contact name and email. Since these are in a couple of 
       // different promises, we'll  create a promise array.
@@ -80,7 +95,7 @@ export class ContactListPageObject extends PageObject {
   /**
    * Returns a promise of comma delimited names
    */
-  getContactNames() {
+  getContactNames(): wdpromise.Promise<string> {
     return this.trs.reduce((acc, curr) => {
       let name = curr.all(by.tagName('td')).get(COL.name);
       return name.getText().then(text => {
