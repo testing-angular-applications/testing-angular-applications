@@ -32,18 +32,18 @@
     "hammerjs": "2.0.8",
     "rxjs": "5.4.3",
     "web-animations-js": "2.3.1",
-    "zone.js": "0.8.17"
+    "zone.js": "0.8.18"
   },
   "devDependencies": {
     "@angular/cdk": "2.0.0-beta.10",
-    "@angular/cli": "1.4.1",
+    "@angular/cli": "1.4.5",
     "@angular/compiler-cli": "4.4.4",
     "@angular/language-service": "4.4.4",
     "@types/hammerjs": "2.0.35",
-    "@types/jasmine": "2.5.54",
+    "@types/jasmine": "2.6.0",
     "@types/jasminewd2": "2.0.3",
-    "@types/node": "8.0.28",
-    "codelyzer": "3.2.0",
+    "@types/node": "8.0.33",
+    "codelyzer": "3.2.1",
     "jasmine-core": "2.8.0",
     "jasmine-reporters": "^2.2.1",
     "jasmine-spec-reporter": "4.2.1",
