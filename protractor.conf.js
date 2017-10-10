@@ -15,7 +15,7 @@ exports.config = {
     }
   },
   directConnect: !process.env.IS_JENKINS,
-  baseUrl: 'http://localhost:4200/',
+  baseUrl: process.env.URL || 'http://localhost:4200/',
 
   // Jasmine
   framework: 'jasmine',
