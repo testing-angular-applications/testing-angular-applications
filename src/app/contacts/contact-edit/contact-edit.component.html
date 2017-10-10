@@ -14,7 +14,7 @@
               [mdTooltip]="contact.favorite ? 'Starred' : 'Not Starred'"
               (click)="saveContact(contact)"></i>
             <md-input-container>
-              <input mdInput placeholder="Name" [(ngModel)]="contact.name" />
+              <input mdInput placeholder="Name" [(ngModel)]="contact.name" class="contact-name" />
             </md-input-container>
           </md-card-title>
           <md-card-subtitle class="left-padding">
