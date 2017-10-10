@@ -32,10 +32,6 @@ export class ContactEditComponent implements OnInit {
     this.loadContact();
   }
 
-  public getKeys(object: Object): string[] {
-    return Object.keys(object).map((key, value) => key);
-  }
-
   public saveContact(contact: Contact) {
     contact.favorite = !contact.favorite;
     this.contactService.save(contact);
@@ -52,14 +48,6 @@ export class ContactEditComponent implements OnInit {
     });
   }
 
-  public displayEditSnackBar(): void {
-    const message = 'Contact updated';
-    const snackConfig: MdSnackBarConfig = {duration: 2000};
-    const actionLabel = '';
-
-    this.snackBar.open(message, actionLabel, snackConfig);
-  }
-
   public updateContact(contact: Contact): void {
     if (!this.isContactValid(contact)) {
       return;
@@ -72,15 +60,27 @@ export class ContactEditComponent implements OnInit {
         });
   }
 
-  public isEmailValid(email: string): boolean {
+  private getKeys(object: Object): string[] {
+    return Object.keys(object).map((key, value) => key);
+  }
+
+  private displayEditSnackBar(): void {
+    const message = 'Contact updated';
+    const snackConfig: MdSnackBarConfig = {duration: 2000};
+    const actionLabel = '';
+
+    this.snackBar.open(message, actionLabel, snackConfig);
+  }
+
+  private isEmailValid(email: string): boolean {
     return email === '' || (email !== '' && email.includes('@') && email.includes('.'));
   }
 
-  public isPhoneNumberValid(phoneNumber: string): boolean {
+  private isPhoneNumberValid(phoneNumber: string): boolean {
     return phoneNumber === '' || (phoneNumber !== '' && phoneNumber.length === 10 && /^\d+$/.test(phoneNumber));
   }
 
-  public isContactValid(contact: Contact): boolean {
+  private isContactValid(contact: Contact): boolean {
     if (!this.isEmailValid(contact.email)) {
       this.dialog.open(InvalidEmailModalComponent);
       return false;
