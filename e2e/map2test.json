@@ -1,0 +1,40 @@
+{
+  "mapping": [ {
+      "paths": [ "src/app/contacts/contact-detail/" ],
+      "suites": [ "routing", "viewContact" ]
+    }, {
+      "paths": [ "src/app/contacts/contact-list/" ],
+      "suites": [ "routing", "contactList" ]
+    }, {
+      "paths": [ "src/app/contacts/new-contact/"],
+      "suites": [ "routing", "addContact" ]
+    }, {
+      "paths": [ "src/app/shared/" ],
+      "suites": [ "routing", "viewContact", "contactList", "addContact" ]
+    }, {
+      "paths": [
+        "app/app-routing.module.ts",
+        "app/app.component.ts",
+        "app/app.material.module.ts",
+        "app/app.module.ts"
+       ],
+      "suites": [ "routing" ]
+    }
+  ],
+  "suites":  {
+    "viewContact": [
+      "view-contact.e2e-spec.ts"
+    ],
+    "contactList": [
+      "contact-list.e2e-spec.ts"
+    ],
+    "addContact": [
+      "add-contact.e2e-spec.ts",
+      "add-second-contact.e2e-spec.ts",
+      "invalid-contact.e2e-spec.ts"
+    ],
+    "routing": [
+      "routing.e2e-spec.ts"
+    ]
+  }
+}

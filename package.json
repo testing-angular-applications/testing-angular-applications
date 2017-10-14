@@ -12,7 +12,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "e2e-smoke": "protractor e2e/map2test.js"
   },
   "private": true,
   "dependencies": {

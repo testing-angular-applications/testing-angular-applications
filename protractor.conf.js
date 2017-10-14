@@ -15,6 +15,8 @@ exports.config = {
     }
   },
   directConnect: !process.env.IS_JENKINS,
+
+  // export URL=https://contacts-app-starter.firebaseapp.com
   baseUrl: process.env.URL || 'http://localhost:4200/',
 
   // Jasmine
