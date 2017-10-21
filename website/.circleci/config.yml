@@ -13,5 +13,5 @@ jobs:
       - run: yarn --version
       - run: google-chrome --version
       
-      - run: yarn install
-      - run: yarn run ng e2e protractor.conf.js
+      - run: cd website && yarn install
+      - run: cd website && yarn run ng e2e protractor.conf.js
