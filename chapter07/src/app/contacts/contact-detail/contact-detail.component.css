@@ -1,0 +1,35 @@
+.messages {
+  text-align: center;
+}
+
+.back-button {
+  cursor: pointer;
+  margin-top: 10px;
+  transform: rotate(180deg);
+}
+
+.back-button-icon {
+  color: white;
+}
+
+.feed-button {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.feed-button-icon {
+  color: white;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons div {
+  display: flex;
+}
+
+.avatar {
+  margin-top: 15px;
+}
