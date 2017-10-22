@@ -1,0 +1,38 @@
+table {
+  margin-left: auto; 
+  margin-right: auto;
+  width: 50%;
+}
+
+tr {
+  cursor: pointer;
+}
+
+.messages {
+  text-align: center;
+}
+
+.add-fab {
+  float: right;
+  cursor: pointer;
+}
+
+.add-fab-icon {
+  color: white;
+}
+
+.edit-icon {
+  color: white;
+}
+
+.edit-icon:hover {
+  color: black;
+}
+
+.delete-icon {
+  color: white;
+}
+
+.delete-icon:hover {
+  color: black;
+}
