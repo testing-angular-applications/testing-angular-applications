@@ -1,0 +1,4 @@
+export BROWSER_NAME='chrome'
+export DIRECT_CONNECT=true
+export SELENIUM_ADDRESS=''
+

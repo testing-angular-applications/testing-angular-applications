@@ -1,0 +1,14 @@
+div {
+    margin: 10px 100px;
+    text-align: left;
+}
+
+main {
+    padding: 20px;
+}
+
+a.titleBar {
+    color: white;
+    text-decoration: none;
+    padding-left: 10px;
+}

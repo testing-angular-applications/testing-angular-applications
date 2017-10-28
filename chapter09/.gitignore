@@ -12,8 +12,17 @@
 /.idea
 .project
 .classpath
+.c9/
 *.launch
 .settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 # misc
 /.sass-cache
@@ -27,6 +36,10 @@ testem.log
 # e2e
 /e2e/*.js
 /e2e/*.map
+/e2e/*-spec.ts
+
+# unit tests
+*.spec.ts
 
 #System Files
 .DS_Store

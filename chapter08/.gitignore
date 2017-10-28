@@ -10,12 +10,9 @@
 
 # IDEs and editors
 /.idea
-.project
-.classpath
-*.launch
-.settings/
 
 # misc
+/.vscode
 /.sass-cache
 /connect.lock
 /coverage/*
@@ -28,6 +25,8 @@ testem.log
 /e2e/*.js
 /e2e/*.map
 
+# unit tests
+*.spec.ts
+
 #System Files
 .DS_Store
-Thumbs.db

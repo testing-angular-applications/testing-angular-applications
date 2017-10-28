@@ -1,0 +1,33 @@
+{
+  "name": "chapter-10-code",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/testing-angular-applications/chapter-10-code.git"
+  },
+  "scripts": {
+    "debug": "./start_debugging.sh", 
+    "e2e": "protractor",
+    "format": "gulp format",
+    "format-enforce": "gulp format:enforce",
+    "pree2e": "webdriver-manager update",
+    "tsc": "tsc",
+    "webdriver-manager": "webdriver-manager"
+  },
+  "author": "Craig Nishina <craig.nishina@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jasmine": "2.5.41",
+    "@types/jasminewd2": "2.0.2",
+    "@types/selenium-webdriver": "3.0.4",
+    "clang-format": "^1.0.55",
+    "gulp": "^3.9.1",
+    "gulp-clang-format": "^1.0.23",
+    "jasmine-spec-reporter": "^4.1.1",
+    "looks-same": "^3.2.1",
+    "protractor": "^5.1.2",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.2"
+  }
+}

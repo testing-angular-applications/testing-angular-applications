@@ -1,0 +1,4 @@
+export BROWSER_NAME='firefox'
+export DIRECT_CONNECT=false
+export SELENIUM_ADDRESS='http://127.0.0.1:4444/wd/hub'
+

@@ -1,0 +1,40 @@
+<div *ngIf="isLoading">
+  <h6 class="messages">{{ loadingContactMessage }}</h6>
+  <md-progress-bar class="app-progress" mode="indeterminate"
+                   aria-label="Indeterminate progress-bar example"></md-progress-bar>
+</div>
+
+<div *ngIf="!isLoading && contact !== null">
+  <md-card>
+    <md-card-title-group>
+      <md-icon>mood</md-icon>
+      <md-card-title>
+        {{ contact.name }}
+      </md-card-title>
+      <md-card-subtitle>{{ contact.email }}</md-card-subtitle>
+      <md-card-subtitle>
+        {{ contact.number | phoneNumber : "default" : contact.country }}
+      </md-card-subtitle>
+    </md-card-title-group>
+  </md-card>
+</div>
+
+<div *ngIf="!isLoading && contact === null">
+  <h6 class="messages">{{ noContactFoundMessage }}</h6>
+</div>
+
+<div class="buttons" *ngIf="!isLoading">
+  <div>
+    <a routerLink="/contacts">
+      <button md-fab class="back-button">
+        <md-icon class="back-button-icon" mdTooltip="Add new contact">forward</md-icon>
+      </button>
+    </a>
+  </div>
+
+  <div>
+    <button md-fab class="feed-button" color="primary" (click)="openDialog()">
+      <md-icon class="feed-button-icon">rss_feed</md-icon>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.messages {
+  text-align: center;
+}
+
+.back-button {
+  cursor: pointer;
+  margin-top: 10px;
+  transform: rotate(180deg);
+}
+
+.back-button-icon {
+  color: white;
+}
+
+.avatar {
+  margin-top: 15px;
+}
+
+input {
+  width: 300px;
+}
+
+i {
+  cursor: pointer;
+}
+
+.left-padding {
+  padding-left: 35px;
+}
+
+.update-contact-button {
+  padding-left: 25px;
+}

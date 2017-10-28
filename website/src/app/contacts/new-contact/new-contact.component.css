@@ -1,0 +1,14 @@
+.back-button {
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    transform: rotate(180deg);
+}
+
+.messages {
+    text-align: center;
+}
+
+md-input {
+    width: 300px;
+}
