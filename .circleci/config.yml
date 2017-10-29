@@ -1,0 +1,43 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/workspace
+    docker:
+      - image: circleci/node:7-browsers
+    steps:
+      - checkout
+      
+      - run: export IS_CIRCLE=true
+      - run: node --version
+      - run: npm --version
+      - run: yarn --version
+      - run: google-chrome --version
+      
+      - run: cd website && yarn install
+      - run: cd website && yarn run ng e2e protractor.conf.js
+
+      - run: cd chapter08 && yarn install
+      - run: cd chapter08 && xvfb-run -a yarn run e2e protractor-first-test.conf.js
+      - run: cd chapter08 && xvfb-run -a yarn run e2e protractor-add-contact.conf.js
+      - run: cd chapter08 && xvfb-run -a yarn run e2e protractor-invalid-contact.conf.js
+      - run: cd chapter08 && xvfb-run -a yarn run e2e protractor-contact-list.conf.js
+      - run: cd chapter08 && xvfb-run -a yarn run e2e protractor-page-objects.conf.js
+      - run: cd chapter08 && xvfb-run -a yarn run e2e protractor-tables.conf.js
+
+      # - run: cd chapter09 && yarn install
+      # - run: cd chapter09 && yarn pree2e
+      # - run: cd chapter09 && xvfb-run -a yarn run e2e
+
+      - run: cd chapter10 && yarn install
+      - run: cd chapter10 && yarn run format-enforce
+      - run: cd chapter10/test_capabilities && yarn install
+      - run: cd chapter10/test_capabilities && yarn run e2e protractor.conf.js
+      - run: cd chapter10/test_environment && yarn install
+      - run: cd chapter10/test_environment && yarn run e2e protractor.conf.js
+      - run: cd chapter10/test_jenkins && yarn install
+      - run: cd chapter10/test_jenkins && yarn run e2e protractor.conf.js
+      - run: cd chapter10/test_multicapabilities && yarn install
+      - run: cd chapter10/test_multicapabilities && yarn run e2e protractor-chrome.conf.js
+      - run: cd chapter10/test_plugins && yarn install
+      - run: cd chapter10/test_plugins && yarn run e2e protractor-onprepare-method.conf.js
+      - run: cd chapter10/test_plugins && yarn run e2e protractor-onprepare-plugin.conf.js
