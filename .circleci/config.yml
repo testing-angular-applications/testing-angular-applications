@@ -24,9 +24,9 @@ jobs:
       - run: cd chapter08 && xvfb-run -a yarn run e2e protractor-page-objects.conf.js
       - run: cd chapter08 && xvfb-run -a yarn run e2e protractor-tables.conf.js
 
-      # - run: cd chapter09 && yarn install
-      # - run: cd chapter09 && yarn pree2e
-      # - run: cd chapter09 && xvfb-run -a yarn run e2e
+      - run: cd chapter09 && yarn install
+      - run: cd chapter09 && yarn pree2e
+      - run: cd chapter09 && xvfb-run -a yarn run e2e
 
       - run: cd chapter10 && yarn install
       - run: cd chapter10 && yarn run format-enforce

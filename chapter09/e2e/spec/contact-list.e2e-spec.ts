@@ -1,6 +1,6 @@
 import {ContactListPageObject} from '../po/contact-list.po';
 import {browser, by, element, ExpectedConditions as EC} from 'protractor';
-import {WebElement} from "../../../contacts-app-starter/node_modules/@types/selenium-webdriver/index";
+import {WebElement} from 'selenium-webdriver';
 
 describe('the contact list', () => {
   // Before all tests, lets create a new page object.
