@@ -6,7 +6,7 @@ jobs:
       - image: circleci/node:7-browsers
     steps:
       - checkout
-      
+
       - run: export IS_CIRCLE=true
       - run: node --version
       - run: npm --version
@@ -15,6 +15,10 @@ jobs:
       
       - run: cd website && yarn install
       - run: cd website && yarn run ng e2e protractor.conf.js
+      - run: 
+          name: Start website
+          command: cd website && yarn start
+          background: true
 
       - run: cd chapter08 && yarn install
       - run: cd chapter08 && xvfb-run -a yarn run e2e protractor-first-test.conf.js
