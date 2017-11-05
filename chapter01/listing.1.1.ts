@@ -5,11 +5,11 @@ export class Cat {
     this._name = name;
   }
 
-  getName() : string {
+  get name() : string {
     return this._name;
   }
 
-  setName(name : string) {
+  set name(name : string) {
     this._name = name;
   }
 
