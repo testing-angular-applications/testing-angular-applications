@@ -1,60 +1,60 @@
 export default class ContactClass {
-  private id: number;
-  private name: string;
-  private email: string;
-  private number: string;
-  private country: string;
-  private favorite: boolean;
+  private _id: number;
+  private _name: string;
+  private _email: string;
+  private _number: string;
+  private _country: string;
+  private _favorite: boolean;
 
   constructor(name?: string) {
-    this.name = name;
+    this._name = name;
   }
 
-  getId(): number {
-    return this.id;
+  get id(): number {
+    return this._id;
   }
 
-  setId(id: number): void {
-    this.id = id;
+  set id(id: number)  {
+    this._id = id;
   }
 
-  getName(): string {
-    return this.name;
+  get name(): string {
+    return this._name;
   }
 
-  setName(name: string): void {
-    this.name = name;
+  set name(name: string) {
+    this._name = name;
   }
 
-  getEmail(): string {
-    return this.email;
+  get email(): string {
+    return this._email;
   }
 
-  setEmail(email: string): void {
-    this.email = email;
+  set email(email: string) {
+    this._email = email;
   }
 
-  getNumber(): string {
-    return this.number;
+  get number(): string {
+    return this._number;
   }
 
-  setNumber(number: string): void {
-    this.number = number;
+  set number(number: string) {
+    this._number = number;
   }
 
-  getCountry(): string {
-    return this.country;
+  get country(): string {
+    return this._country;
   }
 
-  setCountry(country: string): void {
-    this.country = country;
+  set country(country: string) {
+    this._country = country;
   }
 
-  setFavorite(favorite: boolean): void {
-    this.favorite = favorite;
+  set favorite(favorite: boolean) {
+    this._favorite = favorite;
   }
 
-  getFavorite(): boolean {
-    return this.favorite;
+  get favorite(): boolean {
+    return this._favorite;
   }
 }
