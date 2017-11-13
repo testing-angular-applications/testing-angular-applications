@@ -82,7 +82,7 @@ import { phoneNumberErrorMessages } from './phone-number-error-messages';
 })
 export class PhoneNumberPipe implements PipeTransform {
 
-  transform(value: string = '', format?: string, countryCode: string = 'us', allowEmptyString?: boolean): string {
+  transform(value: string = '', format?: string, countryCode: string = '', allowEmptyString?: boolean): string {
     let phoneNumber: PhoneNumber = null;
     let formattedPhoneNumber = '';
 
