@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdDialog, MdDialogRef } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 
 import { constants } from '../modal.constants';
 
@@ -11,7 +11,7 @@ import { constants } from '../modal.constants';
 export class InvalidPhoneNumberModalComponent implements OnInit {
   invalidPhoneNumberMessage = constants.INVALID_PHONE_NUMBER_MESSAGE;
 
-  constructor(public dialogRef: MdDialogRef<InvalidPhoneNumberModalComponent>) { }
+  constructor(public dialogRef: MatDialogRef<InvalidPhoneNumberModalComponent>) { }
 
   ngOnInit() {
   }

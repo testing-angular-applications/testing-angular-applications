@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdDialog, MdSnackBar, MdSnackBarConfig } from '@angular/material';
+import { MatDialog, MatSnackBar, MatSnackBarConfig } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
@@ -16,7 +16,7 @@ import { countryDialingCodes } from '../shared';
   selector: 'app-contact-detail',
   templateUrl: './contact-edit.component.html',
   styleUrls: ['./contact-edit.component.css'],
-  providers: [MdSnackBar]
+  providers: [MatSnackBar]
 })
 export class ContactEditComponent implements OnInit {
   public loadingContactMessage: string = constants.LOADING_CONTACT_MESSAGE;
@@ -26,7 +26,7 @@ export class ContactEditComponent implements OnInit {
   public countryDialingCodes: string[] = this.getKeys(countryDialingCodes);
 
   constructor(private contactService: ContactService, private route: ActivatedRoute, private router: Router,
-              private snackBar: MdSnackBar, private dialog: MdDialog) { }
+              private snackBar: MatSnackBar, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.loadContact();
@@ -66,7 +66,7 @@ export class ContactEditComponent implements OnInit {
 
   private displayEditSnackBar(): void {
     const message = 'Contact updated';
-    const snackConfig: MdSnackBarConfig = {duration: 2000};
+    const snackConfig: MatSnackBarConfig = {duration: 2000};
     const actionLabel = '';
 
     this.snackBar.open(message, actionLabel, snackConfig);

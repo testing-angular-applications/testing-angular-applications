@@ -7,7 +7,7 @@ import {
   ContactService,
 } from '../shared';
 import { constants } from './contact-detail.constants';
-import { MdDialog } from '@angular/material';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-contact-detail',
@@ -20,7 +20,7 @@ export class ContactDetailComponent implements OnInit {
   public isLoading = true;
   public contact: Contact = null;
 
-  constructor(private contactService: ContactService, private route: ActivatedRoute, private dialog: MdDialog) { }
+  constructor(private contactService: ContactService, private route: ActivatedRoute, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.loadContact();
