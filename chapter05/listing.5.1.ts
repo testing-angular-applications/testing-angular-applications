@@ -1,7 +1,23 @@
-it('should not display anything if the length is not ten digits', () => {
-  const testInputPhoneNumber = '703555012';
-  const transformedPhoneNumber = phoneNumber.transform(testInputPhoneNumber);
-  const expectedResult = '';
+import { PhoneNumberPipe } from './phone-number.pipe';
 
-  expect(transformedPhoneNumber).toBe(expectedResult);
+describe('PhoneNumberPipe Tests', () => {
+  let phoneNumber: PhoneNumberPipe = null;
+
+  beforeEach(() => {
+    phoneNumber = new PhoneNumberPipe();
+  });
+
+  describe('default behavior', () => {
+    it('should transform the string or number into the default phone format', () => {
+      const testInputPhoneNumber = '7035550123';
+      const transformedPhoneNumber = phoneNumber.transform(testInputPhoneNumber);
+      const expectedResult = '(703) 555-0123';
+
+      expect(transformedPhoneNumber).toBe(expectedResult);
+    });
+  });
+
+  afterEach(() => {
+    phoneNumber = null;
+  });
 });
