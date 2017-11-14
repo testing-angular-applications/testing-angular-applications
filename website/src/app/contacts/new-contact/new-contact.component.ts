@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdDialog } from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 
 import { ContactService } from '../shared/services/contact.service';
@@ -17,7 +17,7 @@ export class NewContactComponent implements OnInit {
   public id: number;
   public savingContact = false;
 
-  constructor(private contactService: ContactService, private router: Router, private dialog: MdDialog) { }
+  constructor(private contactService: ContactService, private router: Router, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.contactService.getContacts()

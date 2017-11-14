@@ -1,35 +1,37 @@
 import { NgModule } from '@angular/core';
-import { MdButtonModule, MdCardModule, MdDialogModule, MdFormFieldModule, MdIconModule, MdInputModule, MdOptionModule,
-  MdProgressBarModule, MdSelectModule, MdSnackBarModule, MdToolbarModule, MdTooltipModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule, MatOptionModule,
+  MatProgressBarModule, MatSelectModule, MatSnackBarModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 
 @NgModule({
   imports: [
-    MdButtonModule,
-    MdCardModule,
-    MdDialogModule,
-    MdFormFieldModule,
-    MdIconModule,
-    MdInputModule,
-    MdOptionModule,
-    MdProgressBarModule,
-    MdSelectModule,
-    MdSnackBarModule,
-    MdToolbarModule,
-    MdTooltipModule
+    MatButtonModule,
+    MatCardModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatOptionModule,
+    MatProgressBarModule,
+    MatSelectModule,
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatTooltipModule
   ],
   exports: [
-    MdButtonModule,
-    MdCardModule,
-    MdDialogModule,
-    MdFormFieldModule,
-    MdIconModule,
-    MdInputModule,
-    MdOptionModule,
-    MdProgressBarModule,
-    MdSelectModule,
-    MdSnackBarModule,
-    MdToolbarModule,
-    MdTooltipModule
+    MatButtonModule,
+    MatCardModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatOptionModule,
+    MatProgressBarModule,
+    MatSelectModule,
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatTooltipModule
   ]
 })
 export class AppMaterialModule { }

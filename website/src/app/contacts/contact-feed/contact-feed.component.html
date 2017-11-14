@@ -1,17 +1,17 @@
-<h2 md-dialog-title>Latest posts from {{name}}</h2>
-<md-dialog-content>
-<md-list *ngIf="updates.length > 0">
-    <md-list-item *ngFor="let update of updates">
-      <h4 md-line>{{update}}</h4>
-      <p class="update-time" md-line>at Wed 12:00</p>
-    </md-list-item>
-</md-list>
+<h2 mat-dialog-title>Latest posts from {{name}}</h2>
+<mat-dialog-content>
+<mat-list *ngIf="updates.length > 0">
+    <mat-list-item *ngFor="let update of updates">
+      <h4 mat-line>{{update}}</h4>
+      <p class="update-time" mat-line>at Wed 12:00</p>
+    </mat-list-item>
+</mat-list>
 
-<md-progress-bar color="secondary" mode="indeterminate" *ngIf="updates.length == 0"></md-progress-bar>
-</md-dialog-content>
-<md-dialog-actions>
+<mat-progress-bar color="secondary" mode="indeterminate" *ngIf="updates.length == 0"></mat-progress-bar>
+</mat-dialog-content>
+<mat-dialog-actions>
   <div class="buttons">
-      <button md-raised-button md-dialog-close disabled="{{closeDisabled}}">Close</button>
-      <button md-raised-button class="follow" color="primary" disabled="{{updates.length < 2}}">Follow</button>
+      <button mat-raised-button mat-dialog-close disabled="{{closeDisabled}}">Close</button>
+      <button mat-raised-button class="follow" color="primary" disabled="{{updates.length < 2}}">Follow</button>
   </div>
-</md-dialog-actions>
+</mat-dialog-actions>

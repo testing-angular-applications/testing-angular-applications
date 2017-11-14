@@ -1,22 +1,22 @@
 <div *ngIf="isLoading">
   <h6 class="messages">{{ loadingContactMessage }}</h6>
-  <md-progress-bar class="app-progress" mode="indeterminate"
-                   aria-label="Indeterminate progress-bar example"></md-progress-bar>
+  <mat-progress-bar class="app-progress" mode="indeterminate"
+                   aria-label="Indeterminate progress-bar example"></mat-progress-bar>
 </div>
 
 <div *ngIf="!isLoading && contact !== null">
-  <md-card>
-    <md-card-title-group>
-      <md-icon>mood</md-icon>
-      <md-card-title>
+  <mat-card>
+    <mat-card-title-group>
+      <mat-icon>mood</mat-icon>
+      <mat-card-title>
         {{ contact.name }}
-      </md-card-title>
-      <md-card-subtitle>{{ contact.email }}</md-card-subtitle>
-      <md-card-subtitle>
+      </mat-card-title>
+      <mat-card-subtitle>{{ contact.email }}</mat-card-subtitle>
+      <mat-card-subtitle>
         {{ contact.number | phoneNumber : "default" : contact.country }}
-      </md-card-subtitle>
-    </md-card-title-group>
-  </md-card>
+      </mat-card-subtitle>
+    </mat-card-title-group>
+  </mat-card>
 </div>
 
 <div *ngIf="!isLoading && contact === null">
@@ -26,15 +26,15 @@
 <div class="buttons" *ngIf="!isLoading">
   <div>
     <a routerLink="/contacts">
-      <button md-fab class="back-button">
-        <md-icon class="back-button-icon" mdTooltip="Add new contact">forward</md-icon>
+      <button mat-fab class="back-button">
+        <mat-icon class="back-button-icon" matTooltip="Add new contact">forward</mat-icon>
       </button>
     </a>
   </div>
 
   <div>
-    <button md-fab class="feed-button" color="primary" (click)="openDialog()">
-      <md-icon class="feed-button-icon">rss_feed</md-icon>
+    <button mat-fab class="feed-button" color="primary" (click)="openDialog()">
+      <mat-icon class="feed-button-icon">rss_feed</mat-icon>
     </button>
   </div>
 </div>

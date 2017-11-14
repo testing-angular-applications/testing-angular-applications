@@ -1,5 +1,5 @@
 import {Component, OnInit, OnDestroy, NgZone, Optional, Inject} from '@angular/core';
-import {MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
+import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {ContactFeedService} from '../shared/services/contact-feed.service';
 import {Subscription} from 'rxjs/Subscription';
 
@@ -14,8 +14,8 @@ export class ContactFeedDialogComponent implements OnInit, OnDestroy {
   name: string;
   closeDisabled = true;
 
-  constructor(public dialogRef: MdDialogRef<ContactFeedDialogComponent>, private feed: ContactFeedService, private zone: NgZone,
-              @Optional() @Inject(MD_DIALOG_DATA) data: any) {
+  constructor(public dialogRef: MatDialogRef<ContactFeedDialogComponent>, private feed: ContactFeedService, private zone: NgZone,
+              @Optional() @Inject(MAT_DIALOG_DATA) data: any) {
     this.name = data.name;
   }
 
