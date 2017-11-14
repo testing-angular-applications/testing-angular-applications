@@ -17,7 +17,7 @@ export class NewContactComponent implements OnInit {
   public id: number;
   public savingContact = false;
 
-  constructor(private contactService: ContactService, private router: Router, private dialog: MdDialog) { }
+  constructor(private contactService: ContactService, private router: Router, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.contactService.getContacts()

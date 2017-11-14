@@ -55,7 +55,7 @@ import { InvalidPhoneNumberModalComponent } from './contacts/shared';
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    InMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: true }),
     RoutingModule
   ],
   providers: [
