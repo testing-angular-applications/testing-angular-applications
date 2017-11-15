@@ -9,7 +9,7 @@ describe('by methods', () => {
   it('by.css', () => {
     let byCss = by.css('.mat-card');
     let wdByCss = WebdriverBy.css('.mat-card');
-    expect(element(byCss).getTagName()).toEqual('md-card');
+    expect(element(byCss).getTagName()).toEqual('mat-card');
     expect(byCss instanceof WebdriverBy).toBeTruthy();
     expect(wdByCss instanceof WebdriverBy).toBeTruthy();
   });
@@ -51,15 +51,15 @@ describe('by methods', () => {
   });
 
   it('by.xpath', () => {
-    let byXpath1 = by.xpath('//md-card/div/h4');
+    let byXpath1 = by.xpath('//mat-card/div/h4');
     expect(element(byXpath1).getText()).toBe('Add New Contact');
 
     // Let's try this again. They are nested but let's say we forgot to put in
     // the div tags. The actual xpath for this is
-    // //app-new-contact/div/md-card/div/h4 It is important to note that finding
+    // //app-new-contact/div/mat-card/div/h4 It is important to note that finding
     // an element based on xpath should be avoided if possible because it can
     // cause brittle tests.
-    let byXpath2 = by.xpath('//app-new-contact/md-card/h4');
+    let byXpath2 = by.xpath('//app-new-contact/mat-card/h4');
     let text: string = null;
     element(byXpath2)
         .getText()
@@ -78,8 +78,8 @@ describe('by methods', () => {
     // Sometimes these are the same thing.
     let byCss = by.css('.mat-card');
     let wdByCss = WebdriverBy.css('.mat-card');
-    expect(element(byCss).getTagName()).toEqual('md-card');
-    expect(element(wdByCss).getTagName()).toEqual('md-card');
+    expect(element(byCss).getTagName()).toEqual('mat-card');
+    expect(element(wdByCss).getTagName()).toEqual('mat-card');
     expect(byCss instanceof WebdriverBy).toBeTruthy();
     expect(wdByCss instanceof WebdriverBy).toBeTruthy();
 

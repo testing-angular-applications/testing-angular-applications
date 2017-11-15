@@ -1,7 +1,7 @@
 import {browser, by, element, ElementFinder, ElementHelper, ProtractorBy} from 'protractor';
 import {By as webdriverBy, WebElement} from 'selenium-webdriver';
 
-describe('element methods', () => {
+fdescribe('element methods', () => {
   beforeEach(() => {
     browser.get('/add');
   });
@@ -81,20 +81,20 @@ describe('element methods', () => {
     // material toolbar via the color="primary" attribute. The value of the
     // getTagName should be the material tag name for the toolbar.
     let body = element(by.tagName('body'));
-    let mdToolbar = body.element(by.css('[color="primary"'));
-    expect(mdToolbar.getTagName()).toBe('md-toolbar');
+    let matToolbar = body.element(by.css('[color="primary"'));
+    expect(matToolbar.getTagName()).toBe('mat-toolbar');
   });
 
   it('getCssValue', () => {
-    let toolbar = element(by.tagName('md-toolbar'));
+    let toolbar = element(by.tagName('mat-toolbar'));
     expect(toolbar.getCssValue('background-color'))
         .toBe('rgba(33, 150, 243, 1)');
   });
 
   it('getAttribute', () => {
     // Check to see the attribute for the class used.
-    let mdCard = element(by.tagName('md-card'));
-    expect(mdCard.getAttribute('class')).toBe('mat-card');
+    let matCard = element(by.tagName('mat-card'));
+    expect(matCard.getAttribute('class')).toBe('mat-card');
 
     // Check the keys we entered are as expected. Note that you cannot use
     // getText() on an input field to get the text.
