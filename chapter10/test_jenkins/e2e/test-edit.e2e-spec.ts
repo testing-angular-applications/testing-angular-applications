@@ -8,7 +8,7 @@ describe('test edit a contact', () => {
   it('should edit Rusty Component name to Rusted Component', () => {
     let tr = element.all(by.css('tbody tr')).get(1);
     let editTd = tr.all(by.tagName('td')).get(4);
-    let favIcon = editTd.element(by.tagName('md-icon'));
+    let favIcon = editTd.element(by.tagName('mat-icon'));
     favIcon.click();
 
     let inputName = element(by.css('input[placeholder="Name"]'));

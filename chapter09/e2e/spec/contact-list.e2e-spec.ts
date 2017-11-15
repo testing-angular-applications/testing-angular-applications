@@ -51,7 +51,7 @@ describe('feed dialog', () => {
     let dialogTitle = element(by.css('app-contact-feed h2.mat-dialog-title'))
     expect(dialogTitle.getText()).toContain('Latest posts from Craig Service')
 
-    let closeButton = element(by.css('button[md-dialog-close]'))
+    let closeButton = element(by.css('button[mat-dialog-close]'))
 
     // This closes the dialog, but we need to wait for the animation to complete, even
     // with automatic angular waiting enable.
@@ -75,7 +75,7 @@ describe('feed dialog', () => {
       1000, 'waiting for close button to be clickable');
     expect(dialogTitle.getText()).toContain('Latest posts from Craig Service')
 
-    let closeButton = element(by.css('button[md-dialog-close]'))
+    let closeButton = element(by.css('button[mat-dialog-close]'))
     closeButton.click();
     browser.wait(EC.stalenessOf(dialogTitle), 3000, 'wait for dialog to close');
     expect(dialogTitle.isPresent()).toBeFalsy();
@@ -88,7 +88,7 @@ describe('feed dialog', () => {
     let followButton = element(by.css('button.follow'))
     expect(followButton.isEnabled()).toBeFalsy();
     let moreThanOnePost = () => {
-      return element.all(by.css('app-contact-feed md-list-item')).count()
+      return element.all(by.css('app-contact-feed mat-list-item')).count()
         .then((count) => {
           return count >= 2;
         })
@@ -106,7 +106,7 @@ describe('feed dialog', () => {
     expect(followButton.isEnabled()).toBeFalsy();
 
     function findAllPosts() {
-      return document.querySelectorAll('app-contact-feed md-list-item')
+      return document.querySelectorAll('app-contact-feed mat-list-item')
     }
     browser.wait(() => {
       return browser.driver.executeScript(findAllPosts)

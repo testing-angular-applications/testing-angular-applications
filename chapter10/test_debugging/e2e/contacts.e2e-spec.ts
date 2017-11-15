@@ -14,7 +14,7 @@ describe('contacts test', () => {
     let dialogTitle = element(by.css('app-contact-feed h2.mat-dialog-title'))
     expect(dialogTitle.getText()).toContain('Latest posts from Craig Service')
 
-    let closeButton = element(by.css('button[md-dialog-close]'))
+    let closeButton = element(by.css('button[mat-dialog-close]'))
 
     // This closes the dialog, but we need to wait for the animation to
     // complete, even with automatic angular waiting enable.
@@ -31,7 +31,7 @@ describe('contacts test', () => {
 
   it('should open the dialog with waitForAngular', (done) => {
     let feedButton = element(by.css('button.feed-button'));
-    let closeButton = element(by.css('button[md-dialog-close]'))
+    let closeButton = element(by.css('button[mat-dialog-close]'))
     let dialogTitle = element(by.css('app-contact-feed h2.mat-dialog-title'))
 
     return feedButton.click()
@@ -61,7 +61,7 @@ describe('contacts test', () => {
 
   fit('should open the dialog with waitForAngular', async () => {
     let feedButton = element(by.css('button.feed-button'));
-    let closeButton = element(by.css('button[md-dialog-close]'))
+    let closeButton = element(by.css('button[mat-dialog-close]'))
     let dialogTitle = element(by.css('app-contact-feed h2.mat-dialog-title'));
 
     await feedButton.click()
