@@ -59,7 +59,7 @@ describe('contacts test', () => {
         });
   })
 
-  fit('should open the dialog with waitForAngular', async () => {
+  it('should open the dialog with waitForAngular', async () => {
     let feedButton = element(by.css('button.feed-button'));
     let closeButton = element(by.css('button[mat-dialog-close]'))
     let dialogTitle = element(by.css('app-contact-feed h2.mat-dialog-title'));

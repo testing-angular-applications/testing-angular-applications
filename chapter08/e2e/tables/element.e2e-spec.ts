@@ -1,7 +1,7 @@
 import {browser, by, element, ElementFinder, ElementHelper, ProtractorBy} from 'protractor';
 import {By as webdriverBy, WebElement} from 'selenium-webdriver';
 
-fdescribe('element methods', () => {
+describe('element methods', () => {
   beforeEach(() => {
     browser.get('/add');
   });
