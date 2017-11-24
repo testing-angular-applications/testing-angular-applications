@@ -11,7 +11,6 @@ import {compareScreenshot} from './screenshot_helper';
 const GOLDEN_IMG = path.join(__dirname, 'contact_list_golden.png');
 
 describe('the contact list', () => {
-
   beforeAll(() => {
     browser.get('/');
 
@@ -33,6 +32,6 @@ describe('the contact list', () => {
         .then((result) => {
           expect(result).toBeTruthy();
           done();
-        })
+        });
   });
 });
