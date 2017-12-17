@@ -12,7 +12,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "karma": "karma"
   },
   "private": true,
   "dependencies": {
