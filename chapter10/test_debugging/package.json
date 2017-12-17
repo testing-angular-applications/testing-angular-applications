@@ -10,9 +10,10 @@
     "e2e": "protractor",
     "format": "gulp format",
     "format-enforce": "gulp format:enforce",
-    "pree2e": "webdriver-manager update --standalone false --gecko false --versions.chrome=2.33",
     "tsc": "tsc",
-    "webdriver-manager": "webdriver-manager"
+    "webdriver-circle": "webdriver-manager update --standalone false --gecko false --versions.chrome=2.33",
+    "webdriver-manager": "webdriver-manager",
+    "webdriver-update": "webdriver-manager update --standalone false --gecko false"
   },
   "author": "Craig Nishina <craig.nishina@gmail.com>",
   "license": "MIT",

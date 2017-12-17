@@ -32,3 +32,6 @@ testem.log
 # system files
 .DS_Store
 Thumbs.db
+
+# unit test results
+karma-results/

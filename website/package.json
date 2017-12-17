@@ -12,7 +12,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "karma": "karma"
   },
   "private": true,
   "dependencies": {
@@ -52,6 +53,7 @@
     "karma-coverage-istanbul-reporter": "1.3.0",
     "karma-jasmine": "1.1.1",
     "karma-jasmine-html-reporter": "0.2.2",
+    "karma-junit-reporter": "^1.2.0",
     "protractor": "5.2.2",
     "ts-node": "4.0.2",
     "tslint": "5.8.0",
