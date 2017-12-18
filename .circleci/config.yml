@@ -17,6 +17,7 @@ jobs:
       # - run: cd website && yarn run e2e protractor.conf.js
 
       - run: cd chapter08 && yarn install
+      - run: cd chapter08 && yarn run webdriver-circle
       - run: cd chapter08 && xvfb-run -a yarn run e2e protractor-first-test.conf.js
       - run: cd chapter08 && xvfb-run -a yarn run e2e protractor-add-contact.conf.js
       - run: cd chapter08 && xvfb-run -a yarn run e2e protractor-invalid-contact.conf.js
@@ -25,18 +26,21 @@ jobs:
       - run: cd chapter08 && xvfb-run -a yarn run e2e protractor-tables.conf.js
 
       - run: cd chapter09 && yarn install
-      - run: cd chapter09 && yarn pree2e
+      - run: cd chapter09 && yarn run webdriver-circle
       - run: cd chapter09 && xvfb-run -a yarn run e2e
 
-      - run: cd chapter10 && yarn install
       - run: cd chapter10/test_capabilities && yarn install
+      - run: cd chapter10/test_capabilities && yarn run webdriver-circle
       - run: cd chapter10/test_capabilities && yarn run e2e protractor.conf.js
       # - run: cd chapter10/test_environment && yarn install
       # - run: cd chapter10/test_environment && yarn run e2e protractor.conf.js
       - run: cd chapter10/test_jenkins && yarn install
+      - run: cd chapter10/test_jenkins && yarn run webdriver-circle
       - run: cd chapter10/test_jenkins && yarn run e2e protractor.conf.js
       - run: cd chapter10/test_multicapabilities && yarn install
+      - run: cd chapter10/test_multicapabilities && yarn run webdriver-circle
       - run: cd chapter10/test_multicapabilities && yarn run e2e protractor-chrome.conf.js
       - run: cd chapter10/test_plugins && yarn install
+      - run: cd chapter10/test_plugins && yarn run webdriver-circle
       - run: cd chapter10/test_plugins && yarn run e2e protractor-onprepare-method.conf.js
       - run: cd chapter10/test_plugins && yarn run e2e protractor-onprepare-plugin.conf.js

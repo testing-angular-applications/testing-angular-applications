@@ -38,35 +38,35 @@ describe('adding a new contact', () => {
     });
 
     it('should not create a new contact with a formatted telephone number',
-       () => {
-         let tel = element(by.css('input[type="tel"]'));
-         tel.sendKeys('123-456-7890');
-         element(by.buttonText('Create')).click();
-         let invalidTelModal =
-             element(by.tagName('app-invalid-phone-number-modal'));
-         expect(invalidTelModal.isDisplayed()).toBe(true);
-         let modalButton = invalidTelModal.element(by.tagName('button'));
-         modalButton.click();
+      () => {
+        let tel = element(by.css('input[type="tel"]'));
+        tel.sendKeys('123-456-7890');
+        element(by.buttonText('Create')).click();
+        let invalidTelModal =
+            element(by.tagName('app-invalid-phone-number-modal'));
+        expect(invalidTelModal.isDisplayed()).toBe(true);
+        let modalButton = invalidTelModal.element(by.tagName('button'));
+        modalButton.click();
 
-         browser.wait(EC.not(EC.presenceOf(invalidTelModal)), 5000);
-         expect(invalidTelModal.isPresent()).toBe(false);
-         expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/add');
-       });
+        browser.wait(EC.not(EC.presenceOf(invalidTelModal)), 5000);
+        expect(invalidTelModal.isPresent()).toBe(false);
+        expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/add');
+      });
 
     it('should not create a new contact with too many numbers in the telephone number',
-       () => {
-         let tel = element(by.css('input[type="tel"]'));
-         tel.sendKeys('12345678901');
-         element(by.buttonText('Create')).click();
-         let invalidTelModal =
-             element(by.tagName('app-invalid-phone-number-modal'));
-         expect(invalidTelModal.isDisplayed()).toBe(true);
-         let modalButton = invalidTelModal.element(by.tagName('button'));
-         modalButton.click();
-
-         browser.wait(EC.not(EC.presenceOf(invalidTelModal)), 5000);
-         expect(invalidTelModal.isPresent()).toBe(false);
-         expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/add');
-       });
+      () => {
+        let tel = element(by.css('input[type="tel"]'));
+        tel.sendKeys('12345678901');
+        element(by.buttonText('Create')).click();
+        let invalidTelModal =
+            element(by.tagName('app-invalid-phone-number-modal'));
+        browser.wait(EC.visibilityOf(invalidTelModal), 5000);
+        expect(invalidTelModal.isDisplayed()).toBe(true);
+        let modalButton = invalidTelModal.element(by.tagName('button'));
+        modalButton.click();
+        browser.wait(EC.not(EC.presenceOf(invalidTelModal)), 5000);
+        expect(invalidTelModal.isPresent()).toBe(false);
+        expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/add');
+      });
   });
 });

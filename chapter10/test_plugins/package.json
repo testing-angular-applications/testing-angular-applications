@@ -7,9 +7,10 @@
     "url": "git+https://github.com/testing-angular-applications/chapter-10-code.git"
   },
   "scripts": {
-    "pree2e": "webdriver-manager update --gecko false --standalone false --versions.chrome=2.33",
     "e2e": "protractor",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "webdriver-circle": "webdriver-manager update --gecko false --standalone false --versions.chrome=2.33",
+    "webdriver-update": "webdriver-manager update --gecko false --standalone false"
   },
   "author": "Craig Nishina <craig.nishina@gmail.com>",
   "license": "MIT",
