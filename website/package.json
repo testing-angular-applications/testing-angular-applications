@@ -13,7 +13,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "protractor",
-    "karma": "karma"
+    "karma": "karma",
+    "webdriver-manager": "webdriver-manager"
   },
   "private": true,
   "dependencies": {

@@ -8,12 +8,11 @@
   "scripts": {
     "gulp": "gulp",
     "ci-copy": "gulp copy",
-    "ci-install": "cd ci && npm install",
+    "ci-install": "cd ci && npm install --force",
     "postinstall": "npm run ci-copy && npm run ci-install"
   },
   "author": "Craig Nishina <craig.nishina@gmail.com>",
   "license": "MIT",
-  "devDependencies": {},
   "dependencies": {
     "gulp": "^3.9.1",
     "run-sequence": "^2.2.0"
