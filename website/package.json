@@ -60,11 +60,16 @@
     "typescript": "2.4.2"
   },
   "repository": {
-    "url": "git+https://github.com/testing-angular-applications/contacts-app-starter.git"
+    "url": "git+https://github.com/testing-angular-applications/testing-angular-applications.git"
   },
   "bugs": {
-    "url": "https://github.com/testing-angular-applications/contacts-app-starter/issues"
+    "url": "https://github.com/testing-angular-applications/testing-angular-applications/issues"
   },
-  "homepage": "https://github.com/testing-angular-applications/contacts-app-starter#readme",
-  "author": "Jesse Palmer <jesselpalmer@gmail.com>"
+  "homepage": "https://github.com/testing-angular-applications/testing-angular-applications#readme",
+  "contributors": [
+    "Jesse Palmer <jesselpalmer@gmail.com>", 
+    "Craig Nishina <craig.nishina@gmail.com>",
+    "Michael Giambalvo <heathkit@gmail.com>",
+    "Corinna Cohn <corinna.cohn@gmail.com>"
+  ]
 }
