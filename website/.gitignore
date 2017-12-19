@@ -47,4 +47,4 @@ yarn-error.log
 /e2e/*.map
 
 # tests
-*.spec.ts
+/src/**/*.spec.ts
