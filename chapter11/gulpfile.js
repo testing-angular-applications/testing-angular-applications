@@ -2,7 +2,12 @@ const gulp = require('gulp');
 const runSequence = require('run-sequence');
 
 gulp.task('copy-website', () => {
-  return gulp.src(['../website/**/*', '!../website/node_modules/'])
+  return gulp.src([
+    '../website/**/*', 
+    '../website/**/.*', 
+    '../website/.**/*', 
+    '../website/.**/.*', 
+    '!../website/node_modules/'])
     .pipe(gulp.dest('ci/'));
 });
 
