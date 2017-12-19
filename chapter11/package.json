@@ -1,0 +1,21 @@
+{
+  "name": "chapter-11-code",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/testing-angular-applications/testing-angular-applications.git"
+  },
+  "scripts": {
+    "gulp": "gulp",
+    "ci-copy": "gulp copy",
+    "ci-install": "cd ci && npm install",
+    "postinstall": "npm run ci-copy && npm run ci-install"
+  },
+  "author": "Craig Nishina <craig.nishina@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "run-sequence": "^2.2.0"
+  }
+}
