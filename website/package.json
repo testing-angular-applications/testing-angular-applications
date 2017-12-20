@@ -13,7 +13,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "protractor",
-    "karma": "karma"
+    "karma": "karma",
+    "webdriver-manager": "webdriver-manager"
   },
   "private": true,
   "dependencies": {
@@ -46,6 +47,7 @@
     "@types/node": "8.5.1",
     "codelyzer": "4.0.2",
     "jasmine-core": "2.8.0",
+    "jasmine-reporters": "2.2.1",
     "jasmine-spec-reporter": "4.2.1",
     "karma": "1.7.1",
     "karma-chrome-launcher": "2.2.0",
