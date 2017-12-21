@@ -21,13 +21,19 @@ test_plugins/
 ## 10.1.5 Environment variables
 test_environment/
 
-## 10.2 Continuous integration
-test_jenkins/
+You'll need to run 
 
-## 10.3 Screenshot testing
+   webdriver-manager start
+
+before running the examples in this section.
+
+## 10.2 Screenshot testing
 test_screenshot/
 
-## 10.4 Debugging
+## 10.3 Experimental Debugging Features
+test_experimental
+
+## 10.4 Debugging with Chrome Devtools
 test_debugging/
 
 Run the `start_debugging.sh` script to start the test with debugging.
