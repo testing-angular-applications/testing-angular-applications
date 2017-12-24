@@ -12,4 +12,5 @@ cp karma-ci.conf.js ../website
 
 # Run the karma tests
 cd ../website
+npm install
 karma start karma-ci.conf.js
