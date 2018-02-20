@@ -24,6 +24,7 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+/website/dist
 
 # e2e
 /e2e/*.js
