@@ -11,7 +11,7 @@ cp -r website/dist/* testing-angular-applications.github.io/
 cd testing-angular-applications.github.io/
 
 git add -A
-git commit -m "commit to deploy gh-pages"
+git commit -m "commit to deploy website"
 git push origin master
 
 cd ..
