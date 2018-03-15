@@ -20,7 +20,7 @@ describe('contact list', () => {
 
     it('should click the + button', () => {
       newContact = contactList.clickPlusButton();
-      expect(newContact.getCurrentUrl()).toBe(browser.baseUrl + '/add');
+      expect(newContact.getCurrentUrl()).toBe(browser.baseUrl + '/#/add');
     });
 
     it('should fill out form for a new contact', () => {
@@ -32,7 +32,7 @@ describe('contact list', () => {
 
     it('should click the create button', () => {
       contactList = newContact.clickCreateButton();
-      expect(contactList.getCurrentUrl()).toBe(browser.baseUrl + '/');
+      expect(contactList.getCurrentUrl()).toBe(browser.baseUrl + '/#/');
     });
   });
 

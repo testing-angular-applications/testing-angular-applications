@@ -12,7 +12,7 @@ export class ContactListPageObject {
    * @returns wdpromise.Promise<any> returns after navigating to the base url.
    */
   navigateTo(): wdpromise.Promise<any> {
-    return browser.get('/');
+    return browser.get('/#/');
   }
 
   /**

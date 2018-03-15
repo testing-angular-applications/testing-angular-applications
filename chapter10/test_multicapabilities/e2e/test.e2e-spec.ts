@@ -2,7 +2,7 @@ import {browser, by, element, ElementFinder} from 'protractor';
 
 describe('listing example', () => {
   beforeAll(() => {
-    browser.get('/');
+    browser.get('/#/');
   });
 
   it('should add Rusty Component as a favorite', () => {

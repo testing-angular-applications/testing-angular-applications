@@ -2,15 +2,15 @@ import {browser, by, element} from 'protractor';
 
 describe('listing example', () => {
   it('load /', () => {
-    console.log('get /')
-    browser.get('/');
-    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/');
+    console.log('get /#/');
+    browser.get('/#/');
+    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/#/');
   });
 
   it('click "+" button -> /add', () => {
-    console.log('click "+" button -> /add')
+    console.log('click "+" button -> /#/add')
     element(by.id('add-contact')).click();
-    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/add');
+    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/#/add');
   });
 
   afterEach(() => {

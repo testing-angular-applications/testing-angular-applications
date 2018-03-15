@@ -27,7 +27,7 @@ export class ContactListPageObject extends PageObject {
   }
 
   navigateTo() {
-    this.browser.get('/');
+    this.browser.get('/#/');
   }
 
   clickPlusButton() {

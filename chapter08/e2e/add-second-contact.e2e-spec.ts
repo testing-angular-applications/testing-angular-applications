@@ -2,7 +2,7 @@ import {browser, by, element, ExpectedConditions as EC} from 'protractor';
 
 describe('adding a new contact with name, email, and phone number', () => {
   beforeAll(() => {
-    browser.get('/');
+    browser.get('/#/');
     element(by.id('add-contact')).click();
     element(by.id('contact-name')).sendKeys('Grace\'s Directive');
   });

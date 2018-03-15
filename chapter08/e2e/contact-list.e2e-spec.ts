@@ -9,7 +9,7 @@ export interface Contact {
 
 describe('the contact list', () => {
   beforeAll(() => {
-    browser.get('/');
+    browser.get('/#/');
   });
 
   it('with filter: should find existing contact "Craig Service"', () => {

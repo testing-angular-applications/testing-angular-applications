@@ -3,7 +3,7 @@ import {browser, by, element, ExpectedConditions as EC} from 'protractor';
 describe('contacts test', () => {
   beforeEach(() => {
     return browser.waitForAngularEnabled(true).then(
-        () => {return browser.get('/contact/4')});
+        () => {return browser.get('/#/contact/4')});
   });
 
   /*

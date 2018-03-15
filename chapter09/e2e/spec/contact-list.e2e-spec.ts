@@ -22,7 +22,7 @@ describe('the contact list', () => {
 
   it('waits for list to load using Expected Conditions', () => {
     browser.waitForAngularEnabled(false);
-    browser.get('https://contacts-app-starter.firebaseapp.com');
+    browser.get('https://testing-angular-applications.github.io');
     const list = element(by.css('app-contact-list'));
     const listReady = EC.not(EC.textToBePresentInElement(list, 'Loading contacts'));
     browser.wait(listReady, 5000, 'Waiting for list to load');
@@ -35,7 +35,7 @@ describe('feed dialog', () => {
   let EC
 
   beforeEach(() => {
-    browser.get('/contact/4')
+    browser.get('/#/contact/4')
     EC = browser.ExpectedConditions;
   });
 

@@ -2,12 +2,12 @@ import {browser, by, element, ExpectedConditions as EC} from 'protractor';
 
 describe('adding a new contact with only a name', () => {
   beforeAll(() => {
-    browser.get('/');
+    browser.get('/#/');
   });
 
   it('should find the add contact button', () => {
     element(by.id('add-contact')).click();
-    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/add');
+    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/#/add');
   });
 
   it('should write a name', () => {
@@ -17,6 +17,6 @@ describe('adding a new contact with only a name', () => {
 
   it('should click the create button', () => {
     element(by.css('.create-button')).click();
-    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/');
+    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/#/');
   });
 });

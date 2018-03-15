@@ -8,7 +8,7 @@ exports.config = {
     }
   },
   directConnect: true,
-  baseUrl: 'https://contacts-app-starter.firebaseapp.com',
+  baseUrl: 'https://testing-angular-applications.github.io',
   
   framework: 'jasmine',
   specs: [
