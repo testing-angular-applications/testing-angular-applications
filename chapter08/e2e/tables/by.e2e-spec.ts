@@ -3,7 +3,7 @@ import {By as WebdriverBy} from 'selenium-webdriver';
 
 describe('by methods', () => {
   beforeEach(() => {
-    browser.get('/add');
+    browser.get('/#/add');
   });
 
   it('by.css', () => {

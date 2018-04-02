@@ -3,7 +3,7 @@ import {By as webdriverBy, WebElement} from 'selenium-webdriver';
 
 describe('element methods', () => {
   beforeEach(() => {
-    browser.get('/add');
+    browser.get('/#/add');
   });
 
   // Note: Protractor By is not the same as a Webdriver By
@@ -105,7 +105,7 @@ describe('element methods', () => {
 
   it('getText', () => {
     // Navigate back to the contacts list page.
-    browser.get('/');
+    browser.get('/#/');
 
     // This is the content of tbody. This is difficult to test a single row but
     // we can check to see if the contents match with regex.

@@ -2,7 +2,7 @@ import { browser, element, by } from 'protractor';
 
 export class ContactsAppStarterPage {
   navigateTo() {
-    return browser.get('/');
+    return browser.get('/#/');
   }
 
   getParagraphText() {

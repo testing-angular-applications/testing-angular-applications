@@ -4,7 +4,7 @@ exports.config = {
   capabilities: {
     browserName: (process.env.BROWSER_NAME || 'chrome')
   },
-  baseUrl: 'https://contacts-app-starter.firebaseapp.com',
+  baseUrl: 'https://testing-angular-applications.github.io',
   specs: ['e2e/**/*.e2e-spec.ts'],
   onPrepare: () => {
     if (process.env.BROWSER_NAME == 'chrome') {

@@ -2,7 +2,7 @@ import {browser, by, element, ExpectedConditions as EC} from 'protractor';
 
 describe('contact list', () => {
   beforeAll(() => {
-    browser.get('/');
+    browser.get('/#/');
   });
 
   it('should be able to add a contact', () => {

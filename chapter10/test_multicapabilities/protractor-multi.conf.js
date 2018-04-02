@@ -4,7 +4,7 @@ exports.config = {
   }, {
     browserName: 'safari'
   } ],
-  baseUrl: 'https://contacts-app-starter.firebaseapp.com',
+  baseUrl: 'https://testing-angular-applications.github.io',
   specs: ['e2e/**/*.e2e-spec.ts'],
   onPrepare: () => {
     require('ts-node').register({

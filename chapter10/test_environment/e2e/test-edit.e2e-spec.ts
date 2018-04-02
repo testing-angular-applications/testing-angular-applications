@@ -2,7 +2,7 @@ import {browser, by, element} from 'protractor';
 
 describe('test edit a contact', () => {
   beforeAll(() => {
-    browser.get('/');
+    browser.get('/#/');
   });
 
   it('should edit Rusty Component name to Rusted Component', () => {

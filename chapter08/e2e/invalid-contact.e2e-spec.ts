@@ -3,7 +3,7 @@ import {browser, by, element, ExpectedConditions as EC} from 'protractor';
 describe('adding a new contact', () => {
   describe('with an invalid email', () => {
     beforeEach(() => {
-      browser.get('/add');
+      browser.get('/#/add');
       element(by.id('contact-name')).sendKeys('Bad Email');
     });
 
@@ -20,7 +20,7 @@ describe('adding a new contact', () => {
 
       browser.wait(EC.not(EC.presenceOf(invalidEmailModal)), 5000);
       expect(invalidEmailModal.isPresent()).toBe(false);
-      expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/add');
+      expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/#/add');
     });
 
     it('should not create a new contact with @baduser.com', () => {
@@ -33,7 +33,7 @@ describe('adding a new contact', () => {
 
   describe('with an invalid phone number', () => {
     beforeEach(() => {
-      browser.get('/add');
+      browser.get('/#/add');
       element(by.id('contact-name')).sendKeys('Bad Tel');
     });
 
@@ -50,7 +50,7 @@ describe('adding a new contact', () => {
 
         browser.wait(EC.not(EC.presenceOf(invalidTelModal)), 5000);
         expect(invalidTelModal.isPresent()).toBe(false);
-        expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/add');
+        expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/#/add');
       });
 
     it('should not create a new contact with too many numbers in the telephone number',
@@ -66,7 +66,7 @@ describe('adding a new contact', () => {
         modalButton.click();
         browser.wait(EC.not(EC.presenceOf(invalidTelModal)), 5000);
         expect(invalidTelModal.isPresent()).toBe(false);
-        expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/add');
+        expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/#/add');
       });
   });
 });

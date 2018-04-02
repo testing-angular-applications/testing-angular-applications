@@ -2,7 +2,7 @@ import {browser, by, element} from 'protractor';
 
 describe('test adding a favorite', () => {
   beforeAll(() => {
-    browser.get('/');
+    browser.get('/#/');
   });
 
   it('should add Rusty Component as a favorite', () => {

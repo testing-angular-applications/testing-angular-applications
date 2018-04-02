@@ -12,7 +12,7 @@ const GOLDEN_IMG = path.join(__dirname, 'contact_list_golden.png');
 
 describe('the contact list', () => {
   beforeAll(() => {
-    browser.get('/');
+    browser.get('/#/');
 
     // Set the window size so the screenshots are consistent.
     browser.driver.manage().window().setSize(1024, 600);
