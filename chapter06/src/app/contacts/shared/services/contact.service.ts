@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+// import { Headers, Http } from '@angular/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/toPromise';
@@ -13,13 +14,13 @@ import { Contact } from '../';
 @Injectable()
 export class ContactService {
   private contactsUrl = 'app/contacts';
-  private headers: Headers = new Headers({'Content-Type': 'application/json'});
+  private headers = new HttpHeaders({'Content-Type': 'application/json'});
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   public getContacts(): any {
     return this.http.get(this.contactsUrl)
-               .map(response => response.json().data as Contact)
+               // .map(response => response.json().data as Contact)
                .catch(this.handleError);
   }
 
@@ -52,7 +53,6 @@ export class ContactService {
   public post(contact: Contact): Observable<Contact> {
     return this.http
         .post(this.contactsUrl, JSON.stringify(contact), {headers: this.headers})
-        .map(res => res.json())
         .catch(this.handleError);
   }
 

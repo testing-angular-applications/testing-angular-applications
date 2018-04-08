@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdDialog, MdDialogRef } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 
 import { constants } from '../modal.constants';
 
@@ -11,7 +11,7 @@ import { constants } from '../modal.constants';
 export class InvalidEmailModalComponent implements OnInit {
   invalidEmailMessage = constants.INVALID_EMAIL_ADDRESS_MESSAGE;
 
-  constructor(public dialogRef: MdDialogRef<InvalidEmailModalComponent>) { }
+  constructor(public dialogRef: MatDialogRef<InvalidEmailModalComponent>) { }
 
   ngOnInit() {
   }

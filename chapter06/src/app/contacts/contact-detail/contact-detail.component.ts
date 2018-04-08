@@ -7,7 +7,7 @@ import {
   ContactService,
 } from '../shared';
 import { constants } from './contact-detail.constants';
-import { MdDialog } from '@angular/material';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-contact-detail',
@@ -20,7 +20,7 @@ export class ContactDetailComponent implements OnInit {
   public isLoading = true;
   public contact: Contact = null;
 
-  constructor(private contactService: ContactService, private route: ActivatedRoute, private dialog: MdDialog) { }
+  constructor(private contactService: ContactService, private route: ActivatedRoute, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.loadContact();
@@ -40,7 +40,7 @@ export class ContactDetailComponent implements OnInit {
   openDialog(): void {
     // For instructional purposes, insert a slight delay before opening the dialog
     setTimeout(() => {
-      const dialogRef = this.dialog.open(ContactFeedDialogComponent, {disableClose: true, data: {name: this.contact.name}});
+      const dialogRef = this.dialog.open(ContactFeedDialogComponent);
       dialogRef.afterClosed().subscribe(result => {
         // TODO do something here if Follow is clicked
       });
