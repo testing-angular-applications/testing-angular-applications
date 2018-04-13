@@ -11,7 +11,7 @@ describe('ContactClass tests', () => {
     expect(contact).not.toBeNull();
   });
 
-  it('should set name properly through constructor', () => {
+  it('should set name correctly through constructor', () => {
     contact = new ContactClass('Liz');
     expect(contact.name).toEqual('Liz');
   });
