@@ -16,12 +16,12 @@ describe('ContactClass tests', () => {
     expect(contact.name).toEqual('Liz');
   });
 
-  it('should get and set id properly', () => {
+  it('should get and set id correctly', () => {
     contact.id = 1;
     expect(contact.id).toEqual(1);
   });
 
-  it('should get and set name properly', () => {
+  it('should get and set name correctly', () => {
     contact.name = 'Liz';
     expect(contact.name).toEqual('Liz');
   });
