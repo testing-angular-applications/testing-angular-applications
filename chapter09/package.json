@@ -2,7 +2,7 @@
   "name": "chapter-9-code",
   "version": "1.0.0",
   "engines": {
-    "node": "7.x"
+    "node": "8.x"
   },
   "license": "MIT",
   "angular-cli": {},
