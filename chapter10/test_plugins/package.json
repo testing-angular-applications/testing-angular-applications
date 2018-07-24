@@ -1,11 +1,6 @@
 {
   "name": "chapter-10-code",
-  "version": "1.0.0",
   "description": "Chapter 10 sample code",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/testing-angular-applications/chapter-10-code.git"
-  },
   "scripts": {
     "e2e": "protractor",
     "tsc": "tsc",

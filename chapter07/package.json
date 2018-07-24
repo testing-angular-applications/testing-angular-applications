@@ -1,7 +1,5 @@
 {
   "name": "contacts-app-starter",
-  "version": "0.1.9",
-  "license": "MIT",
   "engines": {
     "node": "7.x"
   },
@@ -50,10 +48,5 @@
     "ts-node": "3.3.0",
     "tslint": "5.7.0",
     "typescript": "2.4.2"
-  },
-  "repository": {
-    "url": "https://github.com/testing-angular-applications/contacts-app-starter",
-    "type": "git"
-  },
-  "author": "Jesse Palmer <jesselpalmer@gmail.com>"
+  }
 }
