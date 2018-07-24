@@ -7,7 +7,7 @@
     "url": "git+https://github.com/testing-angular-applications/chapter-10-code.git"
   },
   "scripts": {
-    "webdriver-circle": "webdriver-manager update --standalone false --gecko false --versions.chrome=2.33",
+    "webdriver-circle": "webdriver-manager update --standalone false --gecko false --versions.chrome=2.40",
     "webdriver-update": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor",
     "tsc": "tsc"
