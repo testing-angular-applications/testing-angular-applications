@@ -6,10 +6,10 @@
     "url": "git+https://github.com/testing-angular-applications/chapter-10-code.git"
   },
   "scripts": {
-    "e2e": "./node_modules/.bin/protractor",
-    "webdriver-circle": "./node_modules/.bin/webdriver-manager update --standalone false --gecko false",
-    "webdriver-manager": "./node_modules/.bin/webdriver-manager",
-    "webdriver-update": "./node_modules/.bin/webdriver-manager update --standalone false --gecko false"
+    "e2e": "protractor",
+    "webdriver-circle": "webdriver-manager update --standalone false --gecko false --versions.chrome=2.40",
+    "webdriver-manager": "webdriver-manager",
+    "webdriver-update": "webdriver-manager update --standalone false --gecko false"
   },
   "license": "MIT",
   "devDependencies": {

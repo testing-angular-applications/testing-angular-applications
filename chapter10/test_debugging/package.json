@@ -11,7 +11,7 @@
     "format": "gulp format",
     "format-enforce": "gulp format:enforce",
     "tsc": "tsc",
-    "webdriver-circle": "webdriver-manager update --standalone false --gecko false --versions.chrome=2.33",
+    "webdriver-circle": "webdriver-manager update --standalone false --gecko false --versions.chrome=2.40",
     "webdriver-manager": "webdriver-manager",
     "webdriver-update": "webdriver-manager update --standalone false --gecko false"
   },

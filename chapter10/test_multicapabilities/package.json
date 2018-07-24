@@ -10,7 +10,7 @@
     "pree2e": "tsc",
     "e2e": "protractor",
     "tsc": "tsc",
-    "webdriver-circle": "webdriver-manager update --versions.chrome=2.33",
+    "webdriver-circle": "webdriver-manager update --versions.chrome=2.40",
     "webdriver-update": "webdriver-manager update"
   },
   "author": "Craig Nishina <craig.nishina@gmail.com>",

@@ -8,7 +8,7 @@
   "scripts": {
     "e2e": "protractor",
     "lint": "tslint",
-    "webdriver-circle": "webdriver-manager update --standalone false --gecko false --versions.chrome=2.33",
+    "webdriver-circle": "webdriver-manager update --standalone false --gecko false --versions.chrome=2.40",
     "webdriver-update": "webdriver-manager update --standalone false --gecko false",
     "tsc": "tsc"
   },
