@@ -1,6 +1,5 @@
 {
   "name": "chapter-9-code",
-  "version": "1.0.0",
   "engines": {
     "node": "8.x"
   },
@@ -23,10 +22,6 @@
     "protractor": "^5.1.2",
     "ts-node": "^3.3.0",
     "typescript": "^2.5.3"
-  },
-  "repository": {
-    "url": "https://github.com/testing-angular-applications/chapter-9-code",
-    "type": "git"
   },
   "author": "Michael Giambalvo <heathkit@gmail.com>"
 }

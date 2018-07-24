@@ -1,10 +1,5 @@
 {
   "name": "chapter-8-code",
-  "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/testing-angular-applications/chapter-8-code.git"
-  },
   "scripts": {
     "e2e": "protractor",
     "lint": "tslint",

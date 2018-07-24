@@ -1,10 +1,5 @@
 {
   "name": "chapter-10-code",
-  "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/testing-angular-applications/chapter-10-code.git"
-  },
   "scripts": {
     "debug": "./start_debugging.sh", 
     "e2e": "protractor",

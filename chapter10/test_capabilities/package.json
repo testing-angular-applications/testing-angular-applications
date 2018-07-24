@@ -1,11 +1,6 @@
 {
   "name": "chapter-10-code",
-  "version": "1.0.0",
   "description": "Chapter 10 sample code",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/testing-angular-applications/chapter-10-code.git"
-  },
   "scripts": {
     "webdriver-circle": "webdriver-manager update --standalone false --gecko false --versions.chrome=2.40",
     "webdriver-update": "webdriver-manager update --standalone false --gecko false",

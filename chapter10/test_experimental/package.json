@@ -1,10 +1,5 @@
 {
   "name": "chapter-10-code",
-  "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/testing-angular-applications/chapter-10-code.git"
-  },
   "scripts": {
     "e2e": "protractor",
     "webdriver-circle": "webdriver-manager update --standalone false --gecko false --versions.chrome=2.40",
