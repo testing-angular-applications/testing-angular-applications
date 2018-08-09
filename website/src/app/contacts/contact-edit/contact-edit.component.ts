@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatSnackBar, MatSnackBarConfig } from '@angular/material';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { MatDialog, MatDialogRef, MatSnackBar, MatSnackBarConfig } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
@@ -18,18 +18,26 @@ import { countryDialingCodes } from '../shared';
   styleUrls: ['./contact-edit.component.css'],
   providers: [MatSnackBar]
 })
-export class ContactEditComponent implements OnInit {
+export class ContactEditComponent implements OnInit, OnDestroy {
   public loadingContactMessage: string = constants.LOADING_CONTACT_MESSAGE;
   public noContactFoundMessage: string = constants.NO_CONTACT_FOUND_MESSAGE;
   public isLoading = true;
   public contact: Contact = null;
   public countryDialingCodes: string[] = this.getKeys(countryDialingCodes);
 
+  private modalRef: MatDialogRef<any>;
+
   constructor(private contactService: ContactService, private route: ActivatedRoute, private router: Router,
               private snackBar: MatSnackBar, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.loadContact();
+  }
+
+  ngOnDestroy() {
+    if (this.modalRef) {
+      this.modalRef.close();
+    }
   }
 
   public saveContact(contact: Contact) {
@@ -82,12 +90,12 @@ export class ContactEditComponent implements OnInit {
 
   private isContactValid(contact: Contact): boolean {
     if (!this.isEmailValid(contact.email)) {
-      this.dialog.open(InvalidEmailModalComponent);
+      this.modalRef = this.dialog.open(InvalidEmailModalComponent);
       return false;
     }
 
     if (!this.isPhoneNumberValid(contact.number)) {
-      this.dialog.open(InvalidPhoneNumberModalComponent);
+      this.modalRef = this.dialog.open(InvalidPhoneNumberModalComponent);
       return false;
     }
 
