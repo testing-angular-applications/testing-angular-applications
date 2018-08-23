@@ -6,7 +6,7 @@ Jesse Palmer, Corinna Cohn, Michael Giambalvo, Craig Nishina
 
 [Manning Publications](https://www.manning.com/books/testing-angular-applications)
 
-<img src="https://images.manning.com/270/360/resize/book/4/e4907e3-04ec-4790-986b-b6a7cb949517/Palmer-TAA-MEAP.png" alt="Manning Testing Angular Applications" width="500">
+<img src="https://images.manning.com/270/360/resize/book/4/e4907e3-04ec-4790-986b-b6a7cb949517/Palmer-TAA-MEAP.png" alt="Manning Testing Angular Applications">
 
 The Angular framework is great for building large-scale web applications that can be maintained and extended. And when you're building enterprise-level apps, testing is vital to the development process. Testing improves the quality of code and reduces maintenance, saving both time and money. Even though testing is crucial, it's sometimes neglected since there are few established resources and standards when it comes to modern JavaScript web applications. Developers who know how to build and leverage tests are highly valued by their clients and companies.
 
