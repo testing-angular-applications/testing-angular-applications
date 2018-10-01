@@ -19,7 +19,7 @@ it('should not update the contact if email is invalid', fakeAsync(() => {
   tick();
   expect(nameInput.nativeElement.value).toBe('chauncey');
 
-  component.updateContact(newContact); 
+  component.updateContact(newContact);
   fixture.detectChanges();
   tick(100);
   expect(nameInput.nativeElement.value).toBe('chauncey');

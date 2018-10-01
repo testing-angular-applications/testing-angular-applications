@@ -49,7 +49,7 @@ describe('ContactEditComponent tests', () => {
       ],
       providers: [{provide: ContactService, useValue: contactServiceStub}]
     });
-
+  
     TestBed.overrideModule(BrowserDynamicTestingModule, {
       set: {
         entryComponents: [InvalidEmailModalComponent, InvalidPhoneNumberModalComponent]
@@ -99,20 +99,20 @@ describe('ContactEditComponent tests', () => {
         email: 'delia@example.com',
         number: '1234567890'
       };
-
+  
       component.contact = {
         id: 2,
         name: 'rhonda',
         email: 'rhonda@example.com',
         number: '1234567890'
       };
-
+  
       component.isLoading = false;
       fixture.detectChanges();
       const nameInput = rootElement.query(By.css('.contact-name'));
       tick();
       expect(nameInput.nativeElement.value).toBe('rhonda');
-
+  
       component.updateContact(newContact);
       fixture.detectChanges();
       tick(100);
@@ -138,9 +138,10 @@ describe('ContactEditComponent tests', () => {
       fixture.detectChanges();
       const nameInput = rootElement.query(By.css('.contact-name'));
       tick();
-
       expect(nameInput.nativeElement.value).toBe('chauncey');
-      component.updateContact(newContact); fixture.detectChanges();
+
+      component.updateContact(newContact);
+      fixture.detectChanges();
       tick(100);
       expect(nameInput.nativeElement.value).toBe('chauncey');
     }));
