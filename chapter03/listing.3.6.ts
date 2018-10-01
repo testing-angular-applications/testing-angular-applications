@@ -15,6 +15,4 @@ beforeEach(() => {
       entryComponents: [InvalidEmailModalComponent, InvalidPhoneNumberModalComponent]
     }
   });
-
-  contactService = TestBed.get(ContactService);
 });

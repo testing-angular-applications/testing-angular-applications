@@ -15,7 +15,7 @@ it('should not update the contact if phone number is invalid', fakeAsync(() => {
 
   component.isLoading = false;
   fixture.detectChanges();
-  let nameInput = rootElement.query(By.css('.contact-name'));
+  const nameInput = rootElement.query(By.css('.contact-name'));
   tick();
   expect(nameInput.nativeElement.value).toBe('chauncey');
 

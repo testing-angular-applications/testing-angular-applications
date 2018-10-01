@@ -16,7 +16,6 @@ import '../../../material-app-theme.scss';
 describe('ContactEditComponent tests', () => {
   let fixture: ComponentFixture<ContactEditComponent>;
   let component: ContactEditComponent;
-  let contactService: ContactService;
   let rootElement: DebugElement;
 
   const contactServiceStub = {
@@ -56,8 +55,6 @@ describe('ContactEditComponent tests', () => {
         entryComponents: [InvalidEmailModalComponent, InvalidPhoneNumberModalComponent]
       }
     });
-
-    contactService = TestBed.get(ContactService);
   });
 
   beforeEach(() => {
