@@ -5,7 +5,7 @@ it('should not update the contact if email is invalid', fakeAsync(() => {
     email: 'london@example',
     number: '1234567890'
   };
-  
+
   component.contact = {
     id: 2,
     name: 'chauncey',
@@ -15,7 +15,7 @@ it('should not update the contact if email is invalid', fakeAsync(() => {
 
   component.isLoading = false;
   fixture.detectChanges();
-  let nameInput = rootElement.query(By.css('.contact-name'));
+  const nameInput = rootElement.query(By.css('.contact-name'));
   tick();
   expect(nameInput.nativeElement.value).toBe('chauncey');
 

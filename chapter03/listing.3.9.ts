@@ -2,27 +2,27 @@ describe('updateContact() tests', () => {
   it('should update the contact', fakeAsync(() => {
     const newContact = {
       id: 1,
-      name: 'london',
-      email: 'london@example.com',
+      name: 'delia',
+      email: 'delia@example.com',
       number: '1234567890'
     };
-	
-	component.contact = {
+
+    component.contact = {
       id: 2,
-      name: 'chauncey',
-      email: 'chauncey@example.com',
+      name: 'rhonda',
+      email: 'rhonda@example.com',
       number: '1234567890'
     };
- 
+
     component.isLoading = false;
     fixture.detectChanges();
     const nameInput = rootElement.query(By.css('.contact-name'));
     tick();
-    expect(nameInput.nativeElement.value).toBe('chauncey');
+    expect(nameInput.nativeElement.value).toBe('rhonda');
 
     component.updateContact(newContact);
     fixture.detectChanges();
     tick(100);
-    expect(nameInput.nativeElement.value).toBe('london');
+    expect(nameInput.nativeElement.value).toBe('delia');
   }));
 });
