@@ -1,5 +1,5 @@
 import { DebugElement } from '@angular/core';
-import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
@@ -98,12 +98,65 @@ describe('ContactEditComponent tests', () => {
     it('should update the contact', fakeAsync(() => {
       const newContact = {
         id: 1,
-        name: 'london',
-        email: 'london@example.com',
+        name: 'delia',
+        email: 'delia@example.com',
         number: '1234567890'
       };
 
-    component.contact = {
+      component.contact = {
+        id: 2,
+        name: 'rhonda',
+        email: 'rhonda@example.com',
+        number: '1234567890'
+      };
+
+      component.isLoading = false;
+      fixture.detectChanges();
+      const nameInput = rootElement.query(By.css('.contact-name'));
+      tick();
+      expect(nameInput.nativeElement.value).toBe('rhonda');
+
+      component.updateContact(newContact);
+      fixture.detectChanges();
+      tick(100);
+      expect(nameInput.nativeElement.value).toBe('delia');
+    }));
+
+    it('should not update the contact if email is invalid', fakeAsync(() => {
+      const newContact = {
+        id: 1,
+        name: 'london',
+        email: 'london@example',
+        number: '1234567890'
+      };
+
+      component.contact = {
+        id: 2,
+        name: 'chauncey',
+        email: 'chauncey@example.com',
+        number: '1234567890'
+      };
+
+      component.isLoading = false;
+      fixture.detectChanges();
+      const nameInput = rootElement.query(By.css('.contact-name'));
+      tick();
+
+      expect(nameInput.nativeElement.value).toBe('chauncey');
+      component.updateContact(newContact); fixture.detectChanges();
+      tick(100);
+      expect(nameInput.nativeElement.value).toBe('chauncey');
+    }));
+
+    it('should not update the contact if phone number is invalid', fakeAsync(() => {
+      const newContact = {
+        id: 1,
+        name: 'london',
+        email: 'london@example.com',
+        number: '12345678901'
+      };
+
+      component.contact = {
         id: 2,
         name: 'chauncey',
         email: 'chauncey@example.com',
@@ -119,7 +172,7 @@ describe('ContactEditComponent tests', () => {
       component.updateContact(newContact);
       fixture.detectChanges();
       tick(100);
-      expect(nameInput.nativeElement.value).toBe('london');
+      expect(nameInput.nativeElement.value).toBe('chauncey');
     }));
   });
 });
