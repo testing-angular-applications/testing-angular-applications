@@ -1,4 +1,6 @@
-# Chapter 10 [![CircleCI Status](https://circleci.com/gh/testing-angular-applications/chapter-10-code.svg?style=shield)](https://circleci.com/gh/testing-angular-applications/chapter-10-code)
+[![CircleCI Status](https://circleci.com/gh/testing-angular-applications/chapter-10-code.svg?style=shield)](https://circleci.com/gh/testing-angular-applications/chapter-10-code)
+
+# Chapter 10
 
 This repo contains mini-examples for each of the sections of Chapter 10.
 
