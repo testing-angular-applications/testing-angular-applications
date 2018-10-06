@@ -1,7 +1,4 @@
-[![Gitter chat](https://badges.gitter.im/testing-angular-applications/gitter.png)](https://gitter.im/testing-angular-applications/lobby)
-[![Code Climate](https://codeclimate.com/github/testing-angular-applications/contacts-app-starter/badges/gpa.svg)](https://codeclimate.com/github/testing-angular-applications/contacts-app-starter)
-[![Dependencies Status](https://david-dm.org/testing-angular-applications/contacts-app-starter/status.svg)](https://david-dm.org/testing-angular-applications/contacts-app-starter)
-[![devDependencies Status](https://david-dm.org/testing-angular-applications/contacts-app-starter/dev-status.svg)](https://david-dm.org/testing-angular-applications/contacts-app-starter?type=dev)
+[![CircleCI Status](https://circleci.com/gh/testing-angular-applications/testing-angular-applications.svg?style=shield)](https://circleci.com/gh/testing-angular-applications/testing-angular-applications)
 
 # Contacts App Starter
 
@@ -31,5 +28,3 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-=======
-# chapter-7-code

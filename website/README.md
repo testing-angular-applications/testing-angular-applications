@@ -1,3 +1,5 @@
+[![CircleCI Status](https://circleci.com/gh/testing-angular-applications/testing-angular-applications.svg?style=shield)](https://circleci.com/gh/testing-angular-applications/testing-angular-applications)
+
 # Contacts App Starter
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
