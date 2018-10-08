@@ -6,15 +6,12 @@ jobs:
       - image: circleci/node:8-browsers
     steps:
       - checkout
-      
+
       - run: export IS_CIRCLE=true
       - run: node --version
       - run: npm --version
       - run: yarn --version
       - run: google-chrome --version
-      
-      # - run: cd website && yarn install
-      # - run: cd website && yarn run e2e protractor.conf.js
 
       - run: cd chapter08 && yarn install
       - run: cd chapter08 && yarn run webdriver-circle
@@ -32,8 +29,6 @@ jobs:
       - run: cd chapter10/test_capabilities && yarn install
       - run: cd chapter10/test_capabilities && yarn run webdriver-circle
       - run: cd chapter10/test_capabilities && yarn run e2e protractor.conf.js
-      # - run: cd chapter10/test_environment && yarn install
-      # - run: cd chapter10/test_environment && yarn run e2e protractor.conf.js
       - run: cd chapter10/test_multicapabilities && yarn install
       - run: cd chapter10/test_multicapabilities && yarn run webdriver-circle
       - run: cd chapter10/test_multicapabilities && yarn run e2e protractor-chrome.conf.js
@@ -41,4 +36,6 @@ jobs:
       - run: cd chapter10/test_plugins && yarn run webdriver-circle
       - run: cd chapter10/test_plugins && yarn run e2e protractor-onprepare-method.conf.js
       - run: cd chapter10/test_plugins && yarn run e2e protractor-onprepare-plugin.conf.js
+
       - run: cd chapter11 && ./run_unit_ci.sh
+

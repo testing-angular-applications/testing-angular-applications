@@ -15,7 +15,7 @@ exports.config = {
     }
   },
   directConnect: !process.env.IS_JENKINS,
-  baseUrl: process.env.URL || 'http://localhost:4200/',
+  baseUrl: 'https://testing-angular-applications.github.io',
 
   // Jasmine
   framework: 'jasmine',
@@ -39,7 +39,7 @@ exports.config = {
       jasmine.getEnv().addReporter(specReporter);
     }
     require('ts-node').register({
-      project: 'e2e/tsconfig.e2e.json'
+      project: 'e2e/tsconfig.json'
     });
   }
 };
