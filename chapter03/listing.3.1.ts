@@ -9,6 +9,6 @@ describe('ContactsComponent Tests', () => {
   });
 
   it('should set instance correctly', () => {
-    expect(contactsComponent).toBeTruthy();
+    expect(contactsComponent).not.toBeNull();
   });
 });
