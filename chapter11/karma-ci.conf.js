@@ -3,21 +3,18 @@
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine', '@angular/cli'],
+    frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-junit-reporter'),
-      require('@angular/cli/plugins/karma')
+      require('@angular-devkit/build-angular/plugins/karma')
     ],
     reporters: ['junit'],
     junitReporter: {
         outputDir: 'karma-results',
         outputFile: 'karma-results.xml'
-    },
-    angularCli: {
-      environment: 'dev',
     },
     port: 9876,
     logLevel: config.LOG_INFO,
