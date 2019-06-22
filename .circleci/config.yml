@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/workspace
     docker:
-      - image: circleci/node:10.16.0-browsers
+      - image: circleci/node:8-browsers
     steps:
       - checkout
 
@@ -37,5 +37,10 @@ jobs:
       - run: cd chapter10/test_plugins && yarn run e2e protractor-onprepare-method.conf.js
       - run: cd chapter10/test_plugins && yarn run e2e protractor-onprepare-plugin.conf.js
 
-      - run: cd chapter11 && ./run_unit_ci.sh
-
+    build-chapter11:
+      working_directory: ~/workspace
+      docker:
+        - image: circleci/node:10.16.0-browsers
+        steps:
+          - checkout
+          - run: cd chapter11 && ./run_unit_ci.sh
