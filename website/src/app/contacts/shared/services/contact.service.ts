@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 
-import 'rxjs/add/operator/toPromise';
-
 import { Contact } from '../';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -47,7 +45,7 @@ export class ContactService {
 
   public post(contact: Contact): Promise<Contact> {
     return this.http
-        .post(this.contactsUrl, JSON.stringify(contact), {headers: this.headers})
+        .post(this.contactsUrl, contact, {headers: this.headers})
         .toPromise()
         .catch(this.handleError);
   }
@@ -56,7 +54,7 @@ export class ContactService {
     const url = `${this.contactsUrl}/${contact.id}`;
 
     return this.http
-             .put(url, JSON.stringify(contact), {headers: this.headers})
+             .put(url, contact, {headers: this.headers})
              .toPromise()
              .then(() => contact)
              .catch(this.handleError);

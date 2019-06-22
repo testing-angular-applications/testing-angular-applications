@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import { interval, of } from 'rxjs';
+import { map, concatMap, delay } from 'rxjs/operators';
 
 const FEED_UPDATES = [
   `Time my favorite, for burritos and beers #BurritoLyfe`,
@@ -22,9 +23,11 @@ export class ContactFeedService {
   constructor() { }
 
   public getFeed() {
-    return Observable.interval(500)
-      .map((x) => Math.random() * 2 + 2)
-      .concatMap((x) => Observable.of(x).delay(x * 1000))
-      .map((x) => FEED_UPDATES[Math.floor(Math.random() * FEED_UPDATES.length)]);
+    return interval(500)
+    .pipe(
+      map((x) => Math.random() * 2 + 2),
+      concatMap((x) => of(x).pipe(delay(x * 1000))),
+      map((x) => FEED_UPDATES[Math.floor(Math.random() * FEED_UPDATES.length)])
+    );
   }
 }
