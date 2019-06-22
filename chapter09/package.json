@@ -1,8 +1,5 @@
 {
   "name": "chapter-9-code",
-  "engines": {
-    "node": "8.x"
-  },
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
