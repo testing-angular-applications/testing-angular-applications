@@ -1,21 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
 import { Contact } from '../';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class ContactService {
   private contactsUrl = 'app/contacts';
-  private headers: Headers = new Headers({'Content-Type': 'application/json'});
+  private headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   public getContacts(): any {
     return this.http.get(this.contactsUrl)
                .toPromise()
-               .then(response => response.json().data as Contact)
                .catch(this.handleError);
   }
 
@@ -50,7 +49,6 @@ export class ContactService {
     return this.http
         .post(this.contactsUrl, JSON.stringify(contact), {headers: this.headers})
         .toPromise()
-        .then(res => res.json())
         .catch(this.handleError);
   }
 
