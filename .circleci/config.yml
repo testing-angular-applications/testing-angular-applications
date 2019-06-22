@@ -36,3 +36,5 @@ jobs:
       - run: cd chapter10/test_plugins && yarn run webdriver-circle
       - run: cd chapter10/test_plugins && yarn run e2e protractor-onprepare-method.conf.js
       - run: cd chapter10/test_plugins && yarn run e2e protractor-onprepare-plugin.conf.js
+
+      - run: cd chapter11 && ./run_unit_ci.sh
