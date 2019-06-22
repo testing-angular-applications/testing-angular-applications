@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Contact } from '../';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class ContactService {
@@ -12,6 +13,7 @@ export class ContactService {
 
   public getContacts(): any {
     return this.http.get(this.contactsUrl)
+               .pipe(map((next: any) => next.data))
                .toPromise()
                .catch(this.handleError);
   }
