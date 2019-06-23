@@ -15,7 +15,7 @@
     "e2e": "protractor",
     "karma": "karma",
     "webdriver-manager": "webdriver-manager",
-    "ci-test": "ng test karma-ci.conf.js"
+    "ci-test": "ng test --karmaConfig=karma-ci.conf.js"
   },
   "private": true,
   "dependencies": {
