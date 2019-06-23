@@ -14,7 +14,8 @@
     "lint": "ng lint",
     "e2e": "protractor",
     "karma": "karma",
-    "webdriver-manager": "webdriver-manager"
+    "webdriver-manager": "webdriver-manager",
+    "ci-test": "ng test karma-ci.conf.js"
   },
   "private": true,
   "dependencies": {

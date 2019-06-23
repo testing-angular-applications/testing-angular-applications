@@ -13,4 +13,4 @@ cp karma-ci.conf.js ../website
 # Run the karma tests
 cd ../website
 yarn install
-./node_modules/.bin/karma start karma-ci.conf.js
+yarn run ci-test
