@@ -7,8 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
-import './rxjs-extensions';
-
 import { AppMaterialModule } from './app.material.module';
 import { ContactDetailComponent } from './contacts/contact-detail';
 import { ContactEditComponent } from './contacts/contact-edit';

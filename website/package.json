@@ -15,12 +15,11 @@
     "e2e": "protractor",
     "karma": "karma",
     "webdriver-manager": "webdriver-manager",
-    "ci-test": "ng test karma-ci.conf.js"
+    "ci-test": "ng test --karmaConfig=karma-ci.conf.js"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "8.0.2",
-    "@angular/cdk": "~8.0.1",
     "@angular/common": "8.0.2",
     "@angular/compiler": "8.0.2",
     "@angular/core": "8.0.2",
@@ -39,6 +38,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.800.3",
+    "@angular/cdk": "~8.0.1",
     "@angular/cli": "^8.0.3",
     "@angular/compiler-cli": "8.0.2",
     "@angular/language-service": "8.0.2",
@@ -46,6 +46,7 @@
     "@types/jasmine": "2.8.2",
     "@types/jasminewd2": "2.0.3",
     "@types/node": "8.5.1",
+    "codelyzer": "^5.0.0",
     "jasmine-core": "2.8.0",
     "jasmine-reporters": "2.2.1",
     "jasmine-spec-reporter": "4.2.1",
