@@ -1,3 +1,5 @@
+**Important**: Please use a node 6.x version, preferably. There may be breaking changes if you use node 7+. We recommned using nvm to switch versions.
+
 [![CircleCI Status](https://circleci.com/gh/testing-angular-applications/testing-angular-applications.svg?style=shield)](https://circleci.com/gh/testing-angular-applications/testing-angular-applications)
 
 # Contacts App Starter
